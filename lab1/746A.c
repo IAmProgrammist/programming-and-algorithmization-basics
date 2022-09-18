@@ -7,18 +7,18 @@ int main() {
   int ratioA = a;
   int ratioB = b / 2;
   int ratioC = c / 4;
-  int rationMin;
+  int ratioMin;
 
   if (ratioA < ratioB && ratioA < ratioC)
-    rationMin = ratioA;
+    ratioMin = ratioA;
   else if (ratioB < ratioC)
-    rationMin = ratioB;
+    ratioMin = ratioB;
   else
-    rationMin = ratioC;
+    ratioMin = ratioC;
 
   const int RATIO_COUNT_MIN = 7;
 
-  printf("%d", rationMin * RATIO_COUNT_MIN);
+  printf("%d", ratioMin * RATIO_COUNT_MIN);
 
   return 0;
 }

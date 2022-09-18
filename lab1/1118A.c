@@ -9,9 +9,11 @@ int main() {
     int a, b;
     scanf("%lld %d %d", &n, &a, &b);
 
-    long long sum1 = n * a;
-    long long sum2 = (n / 2) * b + (n % 2) * a;
-    long long sum = sum2 < sum1 ? sum2 : sum1;
+    long long sum;
+    if (b >= a * 2)
+      sum = n * a;
+    else
+      sum = (n / 2) * b + (n % 2) * a;
 
     printf("%lld\n", sum);
   }

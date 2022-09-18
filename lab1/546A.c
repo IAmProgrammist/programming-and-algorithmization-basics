@@ -7,7 +7,7 @@ int main() {
   int S = ((k + w * k) * w) / 2;
   int totalPayment = S - n;
 
-  if (S - n < 0)
+  if (totalPayment < 0)
     totalPayment = 0;
 
   printf("%d", totalPayment);
