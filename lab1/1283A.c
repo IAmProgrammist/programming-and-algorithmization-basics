@@ -1,9 +1,10 @@
 #include <stdio.h>
 
+#define MINUTES_IN_HOUR 60
+#define HOURS_IN_DAY 24
+#define FULL_DAY_IN_MINUTES HOURS_IN_DAY * MINUTES_IN_HOUR
+
 int main() {
-  const int MINUTES_IN_HOUR = 60;
-  const int HOURS_IN_DAY = 24;
-  const int FULL_DAY_IN_MINUTES = HOURS_IN_DAY * MINUTES_IN_HOUR;
   int t;
   scanf("%d", &t);
 

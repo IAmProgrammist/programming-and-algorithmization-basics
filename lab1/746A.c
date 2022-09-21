@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define RATIO_COUNT_MIN 7
+
 int main() {
   int a, b, c;
   scanf("%d %d %d", &a, &b, &c);
@@ -15,8 +17,6 @@ int main() {
     ratioMin = ratioB;
   else
     ratioMin = ratioC;
-
-  const int RATIO_COUNT_MIN = 7;
 
   printf("%d", ratioMin * RATIO_COUNT_MIN);
 
