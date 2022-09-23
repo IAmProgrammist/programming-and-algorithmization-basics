@@ -4,14 +4,17 @@ int main() {
     int a, b, c;
     scanf("%d %d %d", &a, &b, &c);
 
+    int requiredTime;
     if (a >= b + c)
-        printf("%d", a - (b + c) + 1);
+        requiredTime = a - (b + c) + 1;
     else if (b >= a + c)
-        printf("%d", b - (a + c) + 1);
+        requiredTime = b - (a + c) + 1;
     else if (c >= a + b)
-        printf("%d", c - (a + b) + 1);
+        requiredTime = c - (a + b) + 1;
     else
-        printf("0");
+        requiredTime = 0;
+
+    printf("%d", requiredTime);
 
     return 0;
 }
