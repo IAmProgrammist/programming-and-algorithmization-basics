@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 int main() {
-  int w, k, n;
-  scanf("%d %d %d", &k, &n, &w);
+    int w, k, n;
+    scanf("%d %d %d", &k, &n, &w);
 
-  int S = ((k + w * k) * w) / 2;
-  int totalPayment = S - n;
+    int S = ((k + w * k) * w) / 2;
 
-  if (totalPayment < 0)
-    totalPayment = 0;
+    int totalPayment = S - n;
+    if (totalPayment < 0)
+        totalPayment = 0;
 
-  printf("%d", totalPayment);
+    printf("%d", totalPayment);
 
-  return 0;
+    return 0;
 }

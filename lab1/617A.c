@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main() {
-  int x;
-  scanf("%d", &x);
+    int x;
+    scanf("%d", &x);
 
-  int steps = x / 5 + (x % 5 != 0);
+    int steps = x / 5 + (x % 5 != 0);
 
-  printf("%d", steps);
+    printf("%d", steps);
 
-  return 0;
+    return 0;
 }
