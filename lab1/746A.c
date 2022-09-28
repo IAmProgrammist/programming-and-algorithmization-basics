@@ -18,7 +18,9 @@ int main() {
     else
         ratioMin = ratioC;
 
-    printf("%d", ratioMin * RATIO_COUNT_MIN);
+    int totalFruitsAmount = ratioMin * RATIO_COUNT_MIN;
+
+    printf("%d", totalFruitsAmount);
 
     return 0;
 }

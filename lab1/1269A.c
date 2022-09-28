@@ -4,7 +4,10 @@ int main() {
     int n;
     scanf("%d", &n);
 
-    printf("%d %d", 9 * n, 8 * n);
+    int a = 9 * n;
+    int b = 8 * n;
+
+    printf("%d %d", a, b);
 
     return 0;
 }
