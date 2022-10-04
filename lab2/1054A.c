@@ -1,16 +1,14 @@
 #include <stdio.h>
-
-int abs(int value) {
-    return value < 0 ? -value : value;
-}
+#include <math.h>
 
 int main() {
     int currentFloor, requiredFloor, liftFloor, stairsPassTime, liftPassTime, liftOpenCloseDoorTime;
     scanf("%d %d %d %d %d %d", &currentFloor, &requiredFloor, &liftFloor,
           &stairsPassTime, &liftPassTime, &liftOpenCloseDoorTime);
 
-    int stairsTime = abs(currentFloor - requiredFloor) * stairsPassTime;
-    int liftTime = (abs(currentFloor - liftFloor) + abs(currentFloor - requiredFloor)) * liftPassTime +
+    int floorsToPass = abs(currentFloor - requiredFloor);
+    int stairsTime = floorsToPass * stairsPassTime;
+    int liftTime = (abs(currentFloor - liftFloor) + floorsToPass) * liftPassTime +
                    3 * liftOpenCloseDoorTime;
 
     if (stairsTime < liftTime)

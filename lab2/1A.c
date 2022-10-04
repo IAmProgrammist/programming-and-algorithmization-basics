@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-long long ceilDiv(long long dividend, long long divisor) {
-    return dividend / divisor + (dividend % divisor != 0);
+long long ceilFrac(long long a, long long b) {
+    return a % b ? a / b + 1 : a / b;
 }
 
 int main() {
     long long squareWidth, squareHeight, flagstoneSize;
     scanf("%lld %lld %lld", &squareWidth, &squareHeight, &flagstoneSize);
 
-    long long flagstoneAmount = ceilDiv(squareWidth, flagstoneSize) *
-            ceilDiv(squareHeight, flagstoneSize);
+    long long flagstoneAmount = ceilFrac(squareWidth, flagstoneSize) *
+            ceilFrac(squareHeight, flagstoneSize);
 
     printf("%lld", flagstoneAmount);
 

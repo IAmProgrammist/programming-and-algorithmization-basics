@@ -4,9 +4,11 @@ int main() {
     int lukeWidth, shredderLen, pressVelocity1, pressVelocity2;
     scanf("%d %d %d %d", &lukeWidth, &shredderLen, &pressVelocity1, &pressVelocity2);
 
-    double timeLeft = 1.0 * (shredderLen - lukeWidth) / (pressVelocity1 + pressVelocity2);
+    int spaceInShredderLeft = shredderLen - lukeWidth;
+    int overallPressVelocity = pressVelocity1 + pressVelocity2;
+    double timeLeft = 1.0 * (spaceInShredderLeft) / (overallPressVelocity);
 
-    printf("%.20f", timeLeft);
+    printf("%.8f", timeLeft);
 
     return 0;
 }
