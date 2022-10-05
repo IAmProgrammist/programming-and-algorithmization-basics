@@ -4,7 +4,7 @@
 int main() {
     int currentFloor, requiredFloor, liftFloor, stairsPassTime, liftPassTime, liftOpenCloseDoorTime;
     scanf("%d %d %d %d %d %d", &currentFloor, &requiredFloor, &liftFloor,
-          &stairsPassTime, &liftPassTime, &liftOpenCloseDoorTime);
+                                      &stairsPassTime, &liftPassTime, &liftOpenCloseDoorTime);
 
     int floorsToPass = abs(currentFloor - requiredFloor);
     int stairsTime = floorsToPass * stairsPassTime;

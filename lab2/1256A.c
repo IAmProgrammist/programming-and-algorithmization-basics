@@ -11,7 +11,7 @@ int main() {
     for (int i = 0; i < taskAmount; i++) {
         int firstMoneyTypeAmount, firstMoneyTypeValue, secondMoneyTypeAmount, requiredValue;
         scanf("%d %d %d %d", &firstMoneyTypeAmount, &secondMoneyTypeAmount,
-              &firstMoneyTypeValue, &requiredValue);
+                                    &firstMoneyTypeValue, &requiredValue);
 
         int firstMoneyTypeRequired = min(firstMoneyTypeAmount, requiredValue / firstMoneyTypeValue);
         requiredValue -= firstMoneyTypeRequired * firstMoneyTypeValue;

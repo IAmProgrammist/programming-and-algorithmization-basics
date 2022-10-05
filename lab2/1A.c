@@ -9,7 +9,7 @@ int main() {
     scanf("%lld %lld %lld", &squareWidth, &squareHeight, &flagstoneSize);
 
     long long flagstoneAmount = ceilFrac(squareWidth, flagstoneSize) *
-            ceilFrac(squareHeight, flagstoneSize);
+                                ceilFrac(squareHeight, flagstoneSize);
 
     printf("%lld", flagstoneAmount);
 

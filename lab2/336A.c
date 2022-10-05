@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <math.h>
 
 int sign(int num) {
@@ -12,13 +11,18 @@ int main() {
 
     int triangleSideLength = abs(rectangleX) + abs(rectangleY);
 
-    bool isRectangleXPositive = rectangleX > 0;
-    int rectangleXSign = sign(rectangleX);
-    int rectangleYSign = sign(rectangleY);
-    int triangleX1 = triangleSideLength * rectangleXSign * !isRectangleXPositive;
-    int triangleY1 = triangleSideLength * rectangleYSign * isRectangleXPositive;
-    int triangleX2 = triangleSideLength * rectangleXSign * isRectangleXPositive;
-    int triangleY2 = triangleSideLength * rectangleYSign * !isRectangleXPositive;
+    int triangleX1, triangleY1, triangleX2, triangleY2;
+    if (rectangleX > 0) {
+        triangleX1 = triangleSideLength * sign(rectangleX);
+        triangleY1 = 0;
+        triangleX2 = 0;
+        triangleY2 = triangleSideLength * sign(rectangleY);
+    } else {
+        triangleX1 = 0;
+        triangleY1 = triangleSideLength * sign(rectangleY);
+        triangleX2 = triangleSideLength * sign(rectangleX);
+        triangleY2 = 0;
+    }
 
     printf("%d %d %d %d", triangleX1, triangleY1, triangleX2, triangleY2);
 

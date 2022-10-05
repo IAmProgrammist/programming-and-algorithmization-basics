@@ -7,7 +7,7 @@ int main() {
     for (int i = 0; i < taskAmount; i++) {
         int firstRabbitPosition, secondRabbitPosition, firstRabbitVelocity, secondRabbitVelocity;
         scanf("%d %d %d %d", &firstRabbitPosition, &secondRabbitPosition,
-              &firstRabbitVelocity, &secondRabbitVelocity);
+                                    &firstRabbitVelocity, &secondRabbitVelocity);
 
         int distanceBetweenRabbits = secondRabbitPosition - firstRabbitPosition;
         int overallVelocity = firstRabbitVelocity + secondRabbitVelocity;
