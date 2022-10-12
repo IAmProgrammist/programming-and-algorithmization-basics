@@ -76,3 +76,32 @@ add_executable(1327A
         lab2/1327A.c)
 add_executable(336A
         lab2/336A.c)
+
+add_executable(1199B
+        lab3/1199B.c)
+add_executable(761A
+        lab3/761A.c)
+add_executable(1133A
+        lab3/1133A.c)
+add_executable(1181A
+        lab3/1181A.c)
+add_executable(1260A
+        lab3/1260A.c)
+add_executable(990A
+        lab3/990A.c)
+add_executable(991A
+        lab3/991A.c)
+add_executable(1036A
+        lab3/1036A.c)
+add_executable(1023A
+        lab3/1023A.c)
+add_executable(195A
+        lab3/195A.c)
+add_executable(1560B
+        lab3/1560B.c)
+add_executable(1539A
+        lab3/1539A.c)
+add_executable(1506A
+        lab3/1506A.c)
+add_executable(1136B
+        lab3/1136B.c)
