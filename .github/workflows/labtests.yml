@@ -13,5 +13,7 @@ jobs:
         run: sudo apt-get install gcc
       - name: Set up jq
         run: sudo apt-get install jq
+      - name: Grant execute permission for testing script
+        run: chmod +x launch_test.sh
       - name: Start tests
         run: ./launch_test.sh
