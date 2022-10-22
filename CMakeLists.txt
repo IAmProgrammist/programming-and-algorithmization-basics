@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.16)
 project(programming_and_algorithmization_basics C)
 
 set(CMAKE_C_STANDARD 11)
@@ -77,6 +77,7 @@ add_executable(1327A
 add_executable(336A
         lab2/336A.c)
 
+# Third lab executables
 add_executable(1199B
         lab3/1199B.c)
 add_executable(761A
@@ -105,3 +106,43 @@ add_executable(1506A
         lab3/1506A.c)
 add_executable(1136B
         lab3/1136B.c)
+
+# Fourth lab executables
+add_executable(41
+        lab4/1.c)
+add_executable(42
+        lab4/2.c)
+add_executable(43
+        lab4/3.c)
+add_executable(44
+        lab4/4.c)
+add_executable(45
+        lab4/5.c)
+add_executable(46
+        lab4/6.c)
+add_executable(47
+        lab4/7.c)
+add_executable(48
+        lab4/8.c)
+add_executable(49
+        lab4/9.c)
+add_executable(410
+        lab4/10.c)
+add_executable(411
+        lab4/11.c)
+add_executable(412
+        lab4/12.c)
+add_executable(413
+        lab4/13.c)
+add_executable(414
+        lab4/14.c)
+add_executable(415
+        lab4/15.c)
+add_executable(416
+        lab4/16.c)
+add_executable(417
+        lab4/17.c)
+add_executable(418
+        lab4/18.c)
+add_executable(419
+        lab4/19.c)

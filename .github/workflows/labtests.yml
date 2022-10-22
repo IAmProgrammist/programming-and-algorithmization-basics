@@ -1,0 +1,17 @@
+name: Running Lab test with custom bash script
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up gcc
+        run: sudo apt-get install gcc
+      - name: Set up jq
+        run: sudo apt-get install jq
+      - name: Start tests
+        run: ./launch_test.sh

@@ -1,0 +1,12 @@
+{
+  "build_dir": "./build_test",
+  "labs": [
+    {
+      "labid": 4,
+      "labname": "",
+      "testsfilename": "tests.json",
+      "testsfilepath": "./lab4",
+      "enabled": true
+    }
+  ]
+}
