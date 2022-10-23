@@ -22,4 +22,6 @@ int main() {
 
         printf("%d", maxNumber);
     }
+
+    return 0;
 }

@@ -2,10 +2,15 @@
 #include "consoleoutput.h"
 #include <stdbool.h>
 
-int sign(int number) {
-    if (number > 0) return 1;
-    if (number < 0) return -1;
-    return 0;
+#define DECREASING_SEQUENCE -1
+#define INCREASING_SEQUENCE 1
+#define EQUAL_SEQUENCE 0
+
+int defineSequenceType(int numberA, int numberB) {
+    int delta = numberA - numberB;
+    if (delta > 0) return INCREASING_SEQUENCE;
+    if (delta < 0) return DECREASING_SEQUENCE;
+    return EQUAL_SEQUENCE;
 }
 
 int main() {
@@ -24,30 +29,32 @@ int main() {
         if (input == 0)
             printf("Тип последовательности определить невозможно");
         else {
-            int requiredDeltaSign = sign(input - prevNumber);
-            bool isDeltaSignComplied = true;
+            int requiredSequenceType = defineSequenceType(input, prevNumber);
+            bool isSequenceTypeComplined = true;
             prevNumber = input;
+
             scanf("%d", &input);
 
-            while (input != 0 && isDeltaSignComplied) {
-                int currentDeltaSign = sign(input - prevNumber);
+            while (input != 0 && isSequenceTypeComplined) {
+                int currentSequenceType = defineSequenceType(input, prevNumber);
 
-                if (currentDeltaSign != requiredDeltaSign)
-                    isDeltaSignComplied = false;
+                if (currentSequenceType != requiredSequenceType)
+                    isSequenceTypeComplined = false;
 
                 prevNumber = input;
+
                 scanf("%d", &input);
             }
 
-            if (isDeltaSignComplied)
-                switch (requiredDeltaSign) {
-                    case -1:
+            if (isSequenceTypeComplined)
+                switch (requiredSequenceType) {
+                    case DECREASING_SEQUENCE:
                         printf("Убывающая последовательность");
                         break;
-                    case 0:
+                    case EQUAL_SEQUENCE:
                         printf("Последовательность из одинаковых элементов");
                         break;
-                    case 1:
+                    case INCREASING_SEQUENCE:
                         printf("Возрастающая последовательность");
                         break;
                 }

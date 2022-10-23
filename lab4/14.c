@@ -3,13 +3,8 @@
 
 #define END_OF_LINE '\n'
 
-bool isVowel(int character) {
-    return character == 'a' ||
-           character == 'e' ||
-           character == 'i' ||
-           character == 'o' ||
-           character == 'u' ||
-           character == 'y';
+bool isLetter(int character) {
+    return character >= 'a' && character <= 'z';
 }
 
 int main() {
@@ -17,9 +12,11 @@ int main() {
 
     int input;
     while ((input = getchar()) != END_OF_LINE) {
-        if (isVowel(input))
+        if (isLetter(input))
             count++;
     }
 
     printf("%d", count);
+
+    return 0;
 }

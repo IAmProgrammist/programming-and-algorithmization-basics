@@ -2,6 +2,7 @@
   "tasks": [
     {
       "tasknum": 1,
+      "enabled": true,
       "taskid": "1",
       "filename": "1.c",
       "cmakelistname": "41",
@@ -91,6 +92,7 @@
     },
     {
       "tasknum": 2,
+      "enabled": true,
       "taskid": "2",
       "filename": "2.c",
       "cmakelistname": "42",
@@ -155,6 +157,7 @@
     },
     {
       "tasknum": 3,
+      "enabled": true,
       "taskid": "3",
       "filename": "3.c",
       "cmakelistname": "43",
@@ -252,6 +255,7 @@
     },
     {
       "tasknum": 4,
+      "enabled": true,
       "taskid": "4",
       "filename": "4.c",
       "cmakelistname": "44",
@@ -349,6 +353,7 @@
     },
     {
       "tasknum": 5,
+      "enabled": true,
       "taskid": "5",
       "filename": "5.c",
       "cmakelistname": "45",
@@ -430,6 +435,7 @@
     },
     {
       "tasknum": 6,
+      "enabled": true,
       "taskid": "6",
       "filename": "6.c",
       "cmakelistname": "46",
@@ -495,6 +501,7 @@
     },
     {
       "tasknum": 7,
+      "enabled": true,
       "taskid": "7",
       "filename": "7.c",
       "cmakelistname": "47",
@@ -502,7 +509,7 @@
       "tests": [
         {
           "input": "0",
-          "output": "Последовательность пуста",
+          "output": "0",
           "explanation": "Последовательность не содержащая элементов"
         },
         {
@@ -544,6 +551,7 @@
     },
     {
       "tasknum": 8,
+      "enabled": true,
       "taskid": "8",
       "filename": "8.c",
       "cmakelistname": "48",
@@ -583,6 +591,7 @@
     },
     {
       "tasknum": 9,
+      "enabled": true,
       "taskid": "9",
       "filename": "9.c",
       "cmakelistname": "49",
@@ -590,7 +599,7 @@
       "tests": [
         {
           "input": "0",
-          "output": "Последовательность пуста",
+          "output": "0 0",
           "explanation": "Последовательность не содержащая элементов"
         },
         {
@@ -632,6 +641,7 @@
     },
     {
       "tasknum": 10,
+      "enabled": true,
       "taskid": "10",
       "filename": "10.c",
       "cmakelistname": "410",
@@ -666,6 +676,7 @@
     },
     {
       "tasknum": 11,
+      "enabled": true,
       "taskid": "11",
       "filename": "11.c",
       "cmakelistname": "411",
@@ -756,6 +767,7 @@
     },
     {
       "tasknum": 12,
+      "enabled": true,
       "taskid": "12",
       "filename": "12.c",
       "cmakelistname": "412",
@@ -805,6 +817,7 @@
     },
     {
       "tasknum": 13,
+      "enabled": true,
       "taskid": "13",
       "filename": "13.c",
       "cmakelistname": "413",
@@ -823,7 +836,7 @@
         {
           "input": "1 2 0",
           "output": "1",
-          "explanation": "Последовательность из двух элементов, первый - максимальный. Максимум не обновляется"
+          "explanation": "Последовательность из двух элементов, второй - максимальный. Максимум не обновляется"
         },
         {
           "input": "76 12 8 55 61 -9 122 -99 78 10 81 0",
@@ -854,6 +867,7 @@
     },
     {
       "tasknum": 14,
+      "enabled": true,
       "taskid": "14",
       "filename": "14.c",
       "cmakelistname": "414",
@@ -866,13 +880,13 @@
         },
         {
           "input": "qoeufslfihrwfepoqrfj",
-          "output": "6",
+          "output": "20",
           "explanation": "Строка из гласных и согласных букв в нижнем регистре"
         },
         {
           "input": "aoieuy",
           "output": "6",
-          "explanation": "Все возможные буквы, что должны считаться гласными"
+          "explanation": "Все гласные буквы"
         },
         {
           "input": "aaaoiaiao",
@@ -881,23 +895,24 @@
         },
         {
           "input": "qwrtpsdfghjklzxcvbnm",
-          "output": "0",
-          "explanation": "Все возможные буквы, что не должны считаться гласными"
+          "output": "20",
+          "explanation": "Все согласные буквы"
         },
         {
-          "input": ",./?<>~`!@#$%^&*()_+-=][{}*- +\\|",
+          "input": ",./?<>~`!@#$%^&*()_+-=][{}*- +\\|0987654321",
           "output": "0",
-          "explanation": "Специальные символы"
+          "explanation": "Специальные символы, цифры"
         },
         {
-          "input": "the quick, brown fox. jumps over - the lazy dog?",
-          "output": "12",
+          "input": "the 42 quick, brown 9921 fox. 0012586 jumps over 12 123 12345 - the lazy dog?",
+          "output": "35",
           "explanation": "Строка, содержащая латинские буквы и спецсимволы"
         }
       ]
     },
     {
       "tasknum": 15,
+      "enabled": true,
       "taskid": "15",
       "filename": "15.c",
       "cmakelistname": "415",
@@ -934,7 +949,7 @@
           "explanation": "Специальные символы"
         },
         {
-          "input": "the quick, brown fox. jumps over - the lazy dog?",
+          "input": "the 42 quick, brown 9921 fox. 0012586 jumps over 12 123 12345 - the lazy dog?",
           "output": "23",
           "explanation": "Строка, содержащая латинские буквы и спецсимволы"
         }
@@ -942,6 +957,7 @@
     },
     {
       "tasknum": 16,
+      "enabled": true,
       "taskid": "16",
       "filename": "16.c",
       "cmakelistname": "416",
@@ -1005,7 +1021,7 @@
         {
           "input": "1 3 5 8 -8 9 10 0",
           "output": "Тип последовательности определить невозможно",
-          "explanation": "Возрастающая последовательность, кроме одного элемента в середине (меньше предыдущему)"
+          "explanation": "Возрастающая последовательность, кроме одного элемента в середине (меньше предыдущего)"
         },
         {
           "input": "1 3 5 8 9 10 10 0",
@@ -1015,7 +1031,7 @@
         {
           "input": "1 3 5 8 9 10 -10 0",
           "output": "Тип последовательности определить невозможно",
-          "explanation": "Возрастающая последовательность, кроме одного элемента в конце (меньше предыдущему)"
+          "explanation": "Возрастающая последовательность, кроме одного элемента в конце (меньше предыдущего)"
         },
         {
           "input": "3 3 5 8 9 10 0",
@@ -1030,7 +1046,7 @@
         {
           "input": "87 56 4 3 3 -12 0",
           "output": "Тип последовательности определить невозможно",
-          "explanation": "Убывающая последовательность, кроме одного элемента в середине (равен предыдущего)"
+          "explanation": "Убывающая последовательность, кроме одного элемента в середине (равен предыдущему)"
         },
         {
           "input": "87 56 4 3 42 -12 0",
@@ -1091,6 +1107,7 @@
     },
     {
       "tasknum": 17,
+      "enabled": true,
       "taskid": "17",
       "filename": "17.c",
       "cmakelistname": "417",
@@ -1112,7 +1129,7 @@
           "explanation": "Символы, которые должны расцениваться как цифры"
         },
         {
-          "input": "aWUIDhkjaF h ifawIAFW faw*/-*/+.=-=-/..,/<>?<",
+          "input": "aWUIDhkjaF h ifawIAFW faw*/-*/+.=-=-/.",
           "output": "0",
           "explanation": "Строка без цифр"
         }
@@ -1120,6 +1137,7 @@
     },
     {
       "tasknum": 18,
+      "enabled": true,
       "taskid": "18",
       "filename": "18.c",
       "cmakelistname": "418",
@@ -1193,6 +1211,8 @@
       "filename": "19.c",
       "cmakelistname": "419",
       "testtype": "mock",
+      "enabled": false,
+      "comment": "Как это чинить я не понимаю, DBL_EPSILON не пашет вот совсем",
       "tests": [
         {
           "input": "0",

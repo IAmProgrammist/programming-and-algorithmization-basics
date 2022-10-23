@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <math.h>
+#include <float.h>
 #include <stdbool.h>
 
-#define DOUBLE_EPSILON 0.000000000000001
-
 bool fcompare(double a, double b) {
-    return fabs(a - b) < DOUBLE_EPSILON;
+    return fabs(a - b) < DBL_EPSILON;
 }
 
 int main() {

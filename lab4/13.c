@@ -10,7 +10,6 @@ int main() {
     if (input == 0) {
         printf("Последовательность пуста");
     } else {
-        int beforeMax = 0;
         int max = input;
         int previousElement = input;
 
@@ -19,6 +18,8 @@ int main() {
         if (input == 0) {
             printf("Последовательность содержит только один элемент");
         } else {
+            int beforeMax = 0;
+
             while (input != 0) {
                 if (input > max) {
                     max = input;
@@ -37,4 +38,6 @@ int main() {
             }
         }
     }
+
+    return 0;
 }

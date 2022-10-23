@@ -3,7 +3,7 @@
 #define CONVERT_CHAR_TO_DIGIT '0'
 #define END_OF_LINE '\n'
 
-int charToInt(int character) {
+int convertCharToDigit(int character) {
     return character - CONVERT_CHAR_TO_DIGIT;
 }
 
@@ -12,7 +12,7 @@ int main() {
 
     int maxDigit = 1;
     while (input != END_OF_LINE) {
-        int digit = charToInt(input);
+        int digit = convertCharToDigit(input);
 
         if (digit > maxDigit)
             maxDigit = digit;
@@ -21,4 +21,6 @@ int main() {
     }
 
     printf("%d", maxDigit);
+
+    return 0;
 }
