@@ -16,9 +16,8 @@ bool isVowel(int character) {
            character == 'y';
 }
 
-// Буква 'Y' может быть гласной и согласной
 bool isConsonant(int character) {
-    return (isLetter(character) && !isVowel(character)) || character == 'y';
+    return isLetter(character) && !isVowel(character);
 }
 
 int main() {
