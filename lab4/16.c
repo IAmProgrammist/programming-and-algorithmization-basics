@@ -29,23 +29,23 @@ int main() {
             printf("Тип последовательности определить невозможно");
         else {
             int requiredSequenceType = defineSequenceType(input, previousNumber);
-            bool isSequenceTypeComplined = true;
+            bool isSequenceTypeComplied = true;
             previousNumber = input;
 
             scanf("%d", &input);
 
-            while (input != 0 && isSequenceTypeComplined) {
+            while (input != 0 && isSequenceTypeComplied) {
                 int currentSequenceType = defineSequenceType(input, previousNumber);
 
                 if (currentSequenceType != requiredSequenceType)
-                    isSequenceTypeComplined = false;
+                    isSequenceTypeComplied = false;
 
                 previousNumber = input;
 
                 scanf("%d", &input);
             }
 
-            if (isSequenceTypeComplined)
+            if (isSequenceTypeComplied)
                 switch (requiredSequenceType) {
                     case DECREASING_SEQUENCE:
                         printf("Убывающая последовательность");

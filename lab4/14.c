@@ -15,7 +15,6 @@ int main() {
         if (isLetter(input))
             count++;
 
-
     printf("%d", count);
 
     return 0;

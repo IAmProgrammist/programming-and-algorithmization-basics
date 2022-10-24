@@ -8,17 +8,17 @@ int convertCharToDigit(int character) {
 }
 
 int main() {
-    int input = getchar();
+    int character = getchar();
 
-    int maxDigit = 1;
+    int maxCharacter = 1;
 
-    while (input != END_OF_LINE) {
-        int digit = convertCharToDigit(input);
+    while (character != END_OF_LINE) {
+        maxCharacter = character > maxCharacter ? character : maxCharacter;
 
-        maxDigit = digit > maxDigit ? digit : maxDigit;
-
-        input = getchar();
+        character = getchar();
     }
+
+    int maxDigit = convertCharToDigit(maxCharacter);
 
     printf("%d", maxDigit);
 
