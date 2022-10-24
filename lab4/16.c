@@ -37,9 +37,7 @@ int main() {
             while (input != 0 && isSequenceTypeComplied) {
                 int currentSequenceType = defineSequenceType(input, previousNumber);
 
-                if (currentSequenceType != requiredSequenceType)
-                    isSequenceTypeComplied = false;
-
+                isSequenceTypeComplied = currentSequenceType == requiredSequenceType;
                 previousNumber = input;
 
                 scanf("%d", &input);
