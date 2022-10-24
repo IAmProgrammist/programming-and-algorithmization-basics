@@ -929,7 +929,7 @@
           "explanation": "Строка из гласных и согласных букв в нижнем регистре"
         },
         {
-          "input": "aoieu",
+          "input": "aoieuy",
           "output": "0",
           "explanation": "Все возможные буквы, что не должны считаться согласными"
         },
@@ -939,8 +939,8 @@
           "explanation": "Строка содержит только согласные буквы"
         },
         {
-          "input": "qwrtpsdfghjklzxcvbnmy",
-          "output": "21",
+          "input": "qwrtpsdfghjklzxcvbnm",
+          "output": "20",
           "explanation": "Все возможные буквы, что должны считаться согласными"
         },
         {
@@ -950,7 +950,7 @@
         },
         {
           "input": "the 42 quick, brown 9921 fox. 0012586 jumps over 12 123 12345 - the lazy dog?",
-          "output": "24",
+          "output": "23",
           "explanation": "Строка, содержащая латинские буквы и спецсимволы"
         }
       ]

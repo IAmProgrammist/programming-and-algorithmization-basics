@@ -6,13 +6,6 @@
       "labname": "",
       "testsfilename": "tests.json",
       "testsfilepath": "./lab4",
-      "enabled": false
-    },
-    {
-      "labid": 4,
-      "labname": "",
-      "testsfilename": "tests.json",
-      "testsfilepath": "./lab4t",
       "enabled": true
     }
   ]
