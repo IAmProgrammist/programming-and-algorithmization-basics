@@ -16,10 +16,9 @@ int main() {
     int digitsSum = 0;
 
     int input;
-    while ((input = getchar()) != END_OF_INPUT) {
+    while ((input = getchar()) != END_OF_INPUT)
         if (isDigit(input))
             digitsSum += convertCharToDigit(input);
-    }
 
     printf("%d", digitsSum);
 

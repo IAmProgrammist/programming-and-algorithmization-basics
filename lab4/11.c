@@ -5,6 +5,7 @@ int main() {
     scanf("%d %d %d", &number, &digit, &requiredDigitCount);
 
     int actualDigitCount = 0;
+
     while (number != 0) {
         if (number % 10 == digit)
             actualDigitCount++;

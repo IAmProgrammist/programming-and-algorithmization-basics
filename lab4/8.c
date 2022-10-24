@@ -11,11 +11,11 @@ int main() {
     int input = getchar();
 
     int maxDigit = 1;
+
     while (input != END_OF_LINE) {
         int digit = convertCharToDigit(input);
 
-        if (digit > maxDigit)
-            maxDigit = digit;
+        maxDigit = digit > maxDigit ? digit : maxDigit;
 
         input = getchar();
     }

@@ -16,18 +16,18 @@ bool isVowel(int character) {
            character == 'y';
 }
 
+// Буква 'Y' может быть гласной и согласной
 bool isConsonant(int character) {
-    return !isVowel(character) && isLetter(character);
+    return (isLetter(character) && !isVowel(character)) || character == 'y';
 }
 
 int main() {
     int count = 0;
 
     int input;
-    while ((input = getchar()) != END_OF_LINE) {
+    while ((input = getchar()) != END_OF_LINE)
         if (isConsonant(input))
             count++;
-    }
 
     printf("%d", count);
 

@@ -7,16 +7,16 @@ int main() {
     int input;
     scanf("%d", &input);
 
-    if (input == 0) {
+    if (input == 0)
         printf("Последовательность пуста");
-    } else {
+    else {
         int min = input;
 
         scanf("%d", &input);
 
-        if (input == 0) {
+        if (input == 0)
             printf("Последовательность содержит только один элемент");
-        } else {
+        else {
             int nextAfterMin = input;
 
             int previousElement;
@@ -31,11 +31,10 @@ int main() {
                 }
             }
 
-            if(nextAfterMin == 0) {
+            if (nextAfterMin == 0)
                 printf("Последний элемент последовательности минимальный");
-            } else {
+            else
                 printf("%d", nextAfterMin);
-            }
         }
     }
 

@@ -1,8 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    int n, input;
-    scanf("%d %d", &n, &input);
+    int n;
+    scanf("%d", &n);
+
+    int input;
+    scanf("%d", &input);
 
     int max = input;
     int min = input;

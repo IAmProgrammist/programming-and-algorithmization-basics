@@ -11,10 +11,10 @@ int main() {
     int count = 0;
 
     int input;
-    while ((input = getchar()) != END_OF_LINE) {
+    while ((input = getchar()) != END_OF_LINE)
         if (isLetter(input))
             count++;
-    }
+
 
     printf("%d", count);
 

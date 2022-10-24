@@ -7,17 +7,17 @@ int main() {
     int input;
     scanf("%d", &input);
 
-    if (input == 0) {
+    if (input == 0)
         printf("Последовательность пуста");
-    } else {
+    else {
         int max = input;
         int previousElement = input;
 
         scanf("%d", &input);
 
-        if (input == 0) {
+        if (input == 0)
             printf("Последовательность содержит только один элемент");
-        } else {
+        else {
             int beforeMax = 0;
 
             while (input != 0) {
@@ -31,11 +31,10 @@ int main() {
                 scanf("%d", &input);
             }
 
-            if (beforeMax == 0) {
+            if (beforeMax == 0)
                 printf("Первый элемент последовательности максимальный");
-            } else {
+            else
                 printf("%d", beforeMax);
-            }
         }
     }
 

@@ -2,14 +2,13 @@
 #include "consoleoutput.h"
 #include <stdbool.h>
 
-#define DECREASING_SEQUENCE -1
+#define DECREASING_SEQUENCE (-1)
 #define INCREASING_SEQUENCE 1
 #define EQUAL_SEQUENCE 0
 
 int defineSequenceType(int numberA, int numberB) {
-    int delta = numberA - numberB;
-    if (delta > 0) return INCREASING_SEQUENCE;
-    if (delta < 0) return DECREASING_SEQUENCE;
+    if (numberA > numberB) return INCREASING_SEQUENCE;
+    if (numberA < numberB) return DECREASING_SEQUENCE;
     return EQUAL_SEQUENCE;
 }
 
@@ -22,26 +21,26 @@ int main() {
     if (input == 0)
         printf("Последовательность пуста");
     else {
-        int prevNumber = input;
+        int previousNumber = input;
 
         scanf("%d", &input);
 
         if (input == 0)
             printf("Тип последовательности определить невозможно");
         else {
-            int requiredSequenceType = defineSequenceType(input, prevNumber);
+            int requiredSequenceType = defineSequenceType(input, previousNumber);
             bool isSequenceTypeComplined = true;
-            prevNumber = input;
+            previousNumber = input;
 
             scanf("%d", &input);
 
             while (input != 0 && isSequenceTypeComplined) {
-                int currentSequenceType = defineSequenceType(input, prevNumber);
+                int currentSequenceType = defineSequenceType(input, previousNumber);
 
                 if (currentSequenceType != requiredSequenceType)
                     isSequenceTypeComplined = false;
 
-                prevNumber = input;
+                previousNumber = input;
 
                 scanf("%d", &input);
             }
@@ -58,9 +57,8 @@ int main() {
                         printf("Возрастающая последовательность");
                         break;
                 }
-            else {
+            else
                 printf("Тип последовательности определить невозможно");
-            }
         }
     }
 

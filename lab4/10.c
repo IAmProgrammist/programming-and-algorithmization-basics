@@ -11,6 +11,7 @@ int main() {
     int input = getchar();
 
     int digitsProduct = 1;
+
     while (input != END_OF_LINE) {
         int digit = convertCharToDigit(input);
 

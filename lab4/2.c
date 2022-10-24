@@ -7,15 +7,15 @@ int main() {
     int input;
     scanf("%d", &input);
 
-    if(input == 0)
+    if (input == 0)
         printf("Последовательность пуста");
     else {
         int maxNumber = input;
 
         scanf("%d", &input);
+
         while (input != 0) {
-            if (input > maxNumber)
-                maxNumber = input;
+            maxNumber = input > maxNumber ? input : maxNumber;
 
             scanf("%d", &input);
         }
