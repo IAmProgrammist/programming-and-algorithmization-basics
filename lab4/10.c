@@ -1,10 +1,9 @@
 #include <stdio.h>
 
-#define CONVERT_CHAR_TO_DIGIT '0'
 #define END_OF_LINE '\n'
 
 int convertCharToDigit(int character) {
-    return character - CONVERT_CHAR_TO_DIGIT;
+    return character - '0';
 }
 
 int main() {

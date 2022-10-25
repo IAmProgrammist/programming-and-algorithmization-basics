@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define CONVERT_CHAR_TO_DIGIT '0'
 #define END_OF_INPUT '.'
 
 bool isDigit(int character) {
@@ -9,7 +8,7 @@ bool isDigit(int character) {
 }
 
 int convertCharToDigit(int character) {
-    return character - CONVERT_CHAR_TO_DIGIT;
+    return character - '0';
 }
 
 int main() {

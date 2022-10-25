@@ -2,14 +2,13 @@
 #include <stdbool.h>
 
 #define END_OF_INPUT '.'
-#define CONVERT_CHAR_TO_DIGIT '0'
 
 bool isDigit(int character) {
     return character >= '0' && character <= '9';
 }
 
 int convertCharToDigit(int character) {
-    return character - CONVERT_CHAR_TO_DIGIT;
+    return character - '0';
 }
 
 int main() {
