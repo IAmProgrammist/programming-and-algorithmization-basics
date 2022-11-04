@@ -146,3 +146,55 @@ add_executable(418
         lab4/18.c)
 add_executable(419
         lab4/19.c)
+
+# Fifth lab executables
+add_executable(231A
+        lab5/231A.c)
+add_executable(977A
+        lab5/977A.c)
+add_executable(116A
+        lab5/116A.c)
+add_executable(677A
+        lab5/677A.c)
+add_executable(467A
+        lab5/467A.c)
+add_executable(432A
+        lab5/432A.c)
+add_executable(155A
+        lab5/155A.c)
+add_executable(1542A
+        lab5/1542A.c)
+add_executable(427A
+        lab5/427A.c)
+add_executable(749A
+        lab5/749A.c)
+add_executable(791A
+        lab5/791A.c)
+add_executable(1472A
+        lab5/1472A.c)
+add_executable(492A
+        lab5/492A.c)
+add_executable(1511A
+        lab5/1511A.c)
+add_executable(245A
+        lab5/245A.c)
+add_executable(1296B
+        lab5/1296B.c)
+add_executable(276A
+        lab5/276A.c)
+add_executable(598A
+        lab5/598A.c)
+add_executable(839A
+        lab5/839A.c)
+add_executable(560A
+        lab5/560A.c)
+add_executable(385A
+        lab5/385A.c)
+add_executable(11A
+        lab5/11A.c)
+add_executable(586A
+        lab5/586A.c)
+add_executable(797B_1
+        lab5/797B_1.c)
+add_executable(797B_2
+        lab5/797B_2.c)
