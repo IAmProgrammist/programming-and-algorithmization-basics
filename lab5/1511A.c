@@ -16,8 +16,7 @@ int main() {
             int userType;
             scanf("%d", &userType);
 
-            if (userType != USER_TYPE_DISLIKE)
-                maxLikes++;
+            maxLikes += userType != USER_TYPE_DISLIKE;
         }
 
         printf("%d\n", maxLikes);

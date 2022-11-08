@@ -13,19 +13,14 @@ int main() {
     for (int currentNumber = 1; currentNumber < numberAmount; currentNumber++) {
         scanf("%d", &number);
 
-        int addTimes;
         int deltaNumbers = previousNumber - number;
 
-        if (deltaNumbers > 0) {
-            addTimes = (previousNumber - number) / addNumber + 1;
-        } else if (deltaNumbers < 0) {
-            addTimes = 0;
-        } else {
-            addTimes = 1;
+        if (deltaNumbers >= 0) {
+            int addTimes = deltaNumbers / addNumber + 1;
+            number += addTimes * addNumber;
+            addTimesTotal += addTimes;
         }
 
-        number += addTimes * addNumber;
-        addTimesTotal += addTimes;
         previousNumber = number;
     }
 

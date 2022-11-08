@@ -14,8 +14,7 @@ int main() {
             int number;
             scanf("%d", &number);
 
-            if (number % 2)
-                oddCount++;
+            oddCount += number % 2;
         }
 
         if (oddCount == numbersAmount)

@@ -7,11 +7,11 @@ int main() {
 
     bool isOnePresented = false;
 
-    for (int currentValue = 0; currentValue < valueAmount; currentValue++) {
+    for (int currentValue = 0; currentValue < valueAmount && !isOnePresented; currentValue++) {
         int value;
         scanf("%d", &value);
 
-        isOnePresented |= value == 1;
+        isOnePresented = value == 1;
     }
 
     if (isOnePresented)

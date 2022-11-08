@@ -5,16 +5,15 @@ int main() {
     scanf("%d", &number);
 
     int primeNumbersAmount = number / 2;
+    int isOdd = number % 2;
 
     printf("%d\n", primeNumbersAmount);
 
-    for (int i = 0; i < primeNumbersAmount - 1; i++) {
+    for (int i = isOdd; i < primeNumbersAmount; i++)
         printf("2 ");
-    }
 
-    int lastPrimeNumber = 2 + number % 2;
-
-    printf("%d", lastPrimeNumber);
+    if (isOdd)
+        printf("3");
 
     return 0;
 }

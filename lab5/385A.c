@@ -1,13 +1,5 @@
 #include <stdio.h>
 
-long long max3(long long a, long long b, long long c) {
-    if (a > b && a > c)
-        return a;
-    else if (b > c)
-        return b;
-    return c;
-}
-
 long long max(long long a, long long b) {
     return a > b ? a : b;
 }
@@ -23,9 +15,13 @@ int main() {
 
     for (int currentDay = 2; currentDay < daysAmount; currentDay++) {
         previousDayPrice = currentDayPrice;
+
         scanf("%d", &currentDayPrice);
 
-        maxProfit = max3(previousDayPrice - currentDayPrice - raspberryKilosForBorrowing, maxProfit, 0);
+        int currentDayProfit = previousDayPrice - currentDayPrice - raspberryKilosForBorrowing;
+
+        if (currentDayProfit > maxProfit)
+            maxProfit = currentDayProfit;
     }
 
     printf("%d", maxProfit);

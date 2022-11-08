@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-#define CASHBACK_SIZE 10
+#define CASHBACK_TOTAL_PARTS 10
+#define CASHBACK_PART 1
 
 int main() {
     int purchaseAmount;
@@ -12,10 +13,10 @@ int main() {
 
         long long moneySpentTotal = 0;
 
-        while (moneyTotal > CASHBACK_SIZE - 1) {
-            long long moneyCashback = moneyTotal / CASHBACK_SIZE;
-            moneyTotal = (moneyTotal % CASHBACK_SIZE) + moneyCashback;
-            moneySpentTotal += moneyCashback * CASHBACK_SIZE;
+        while (moneyTotal > CASHBACK_TOTAL_PARTS - CASHBACK_PART) {
+            long long moneyCashback = moneyTotal / CASHBACK_TOTAL_PARTS;
+            moneyTotal = (moneyTotal % CASHBACK_TOTAL_PARTS) + moneyCashback;
+            moneySpentTotal += moneyCashback * CASHBACK_TOTAL_PARTS;
         }
 
         moneySpentTotal += moneyTotal;

@@ -1,13 +1,14 @@
 #include <stdio.h>
 
 #define NOT_INITED (-1)
+#define BREAKS_ENOUGH_TO_LEAVE 1
+#define TOO_MANY_BREAKS 2
 
 int main() {
     int classAmount;
     scanf("%d", &classAmount);
 
-    int classCounter = 0;
-    int zerosCounter = 0;
+    int breakCounter = TOO_MANY_BREAKS;
     int totalVisitedClasses = 0;
 
     for (int currentClass = 0; currentClass < classAmount; currentClass++) {
@@ -15,18 +16,18 @@ int main() {
         scanf("%d", &isClassPresented);
 
         if (isClassPresented) {
-            classCounter += 1 + zerosCounter * (classCounter != 0);
-            zerosCounter = 0;
-        } else if (zerosCounter == 0) {
-            zerosCounter++;
-        } else if (zerosCounter == 1){
-            totalVisitedClasses += classCounter;
-            classCounter = 0;
-            zerosCounter++;
+            totalVisitedClasses++;
+            breakCounter = 0;
+        } else if (breakCounter < BREAKS_ENOUGH_TO_LEAVE) {
+            totalVisitedClasses++;
+            breakCounter++;
+        } else if (breakCounter == BREAKS_ENOUGH_TO_LEAVE) {
+            totalVisitedClasses--;
+            breakCounter = TOO_MANY_BREAKS;
         }
     }
 
-    totalVisitedClasses += classCounter;
+    totalVisitedClasses -= (breakCounter != TOO_MANY_BREAKS) * breakCounter;
 
     printf("%d", totalVisitedClasses);
 
