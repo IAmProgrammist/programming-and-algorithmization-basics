@@ -6,7 +6,7 @@ void test() {
     assert(isDigit('0'));
     assert(isDigit('4'));
     assert(isDigit('9'));
-    assert(isDigit(';'));
+    assert(!isDigit(';'));
 }
 
 int main() {

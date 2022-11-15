@@ -4,6 +4,8 @@ add_subdirectory(./../sharedfuncs sharedfuncslab6)
 
 include_directories(${SHARED_LIB_INCLUDE_DIR})
 
-set(SRCS test.c)
-add_executable(614 ${SRCS})
-target_link_libraries(614 sharedfuncslab6)
+add_executable(614a testmock.c)
+target_link_libraries(614a sharedfuncslab6)
+
+add_executable(614b testunit.c)
+target_link_libraries(614b sharedfuncslab6)

@@ -17,6 +17,10 @@ void test() {
     a = 0.0000002f, b = 0.0000001f;
     sort2(&a, &b);
     assert(a == 0.0000001f && b == 0.0000002f);
+
+    a = 5, b = 10;
+    sort2(&a, &b);
+    assert(a == 5 && b == 10);
 }
 
 int main() {

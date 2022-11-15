@@ -3,6 +3,6 @@
 
 #include <stdbool.h>
 
-bool isDigit(int x);
+bool isDigit(char x);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_6_7FUNC_H

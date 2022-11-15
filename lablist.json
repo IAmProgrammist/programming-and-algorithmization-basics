@@ -7,6 +7,12 @@
       "testsfilename": "tests.json",
       "testsfilepath": "./lab4",
       "enabled": true
+    },{
+      "labid": 6,
+      "labname": "Введение в функции",
+      "testsfilename": "tests.json",
+      "testsfilepath": "./lab6",
+      "enabled": true
     }
   ]
 }

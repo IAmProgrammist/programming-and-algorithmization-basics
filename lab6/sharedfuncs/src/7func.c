@@ -5,9 +5,11 @@
 
 /**
  * <p>Заголовок: <code>bool isDigit(int x)</code>.</p>
- * <p>Назначение: Возвращает true если символ <code>x</code> является цифрой, иначе - false.
+ * <p>Назначение: проверяет, является ли символ <code>x</code> цифрой.
  * @param x символ, проверяемый на то, является ли он цифрой.
+ * @return true если <code>x</code> - иифра
+ * @return false если <code>x</code> - не цифра
  */
-bool isDigit(int x) {
+bool isDigit(char x) {
     return x >= DIGIT_LOWER_BOUND && x <= DIGIT_UPPER_BOUND;
 }

@@ -6,6 +6,6 @@
 
 bool isNumberPerfect(int n);
 
-void printAllPerfectNumbers(int n);
+void printPerfectNumbers(int n);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_6_14FUNC_H

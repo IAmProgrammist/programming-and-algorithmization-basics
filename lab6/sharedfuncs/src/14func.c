@@ -20,11 +20,11 @@ bool isNumberPerfect(int n) {
 }
 
 /**
- * <p>Заголовок: <code>void printAllPerfectNumbers(int n)</code></p>
+ * <p>Заголовок: <code>void printPerfectNumbers(int n)</code></p>
  * <p>Назначение: выводит все совершенные числа от 1 до <code>n</code> включительно
  * @param n значение до которого будут искаться совершенные числа
  */
-void printAllPerfectNumbers(int n) {
+void printPerfectNumbers(int n) {
     for (int i = 1; i <= n; i++)
         if (isNumberPerfect(i))
             printf("%d\n", i);

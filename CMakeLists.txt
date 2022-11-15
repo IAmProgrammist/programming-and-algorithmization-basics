@@ -3,6 +3,10 @@ project(programming_and_algorithmization_basics C)
 
 set(CMAKE_C_STANDARD 11)
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 add_subdirectory(./lab6/sharedfuncs)
 
 # First lab executables
@@ -216,3 +220,5 @@ add_subdirectory(./lab6/11)
 add_subdirectory(./lab6/12)
 add_subdirectory(./lab6/13)
 add_subdirectory(./lab6/14)
+add_subdirectory(./lab6/15)
+add_subdirectory(./lab6/16)

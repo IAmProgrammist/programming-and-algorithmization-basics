@@ -5,7 +5,7 @@ int main() {
     int n;
     scanf("%d", &n);
 
-    printAllPerfectNumbers(n);
+    printPerfectNumbers(n);
 
     return 0;
 }
