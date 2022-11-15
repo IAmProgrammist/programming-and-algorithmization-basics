@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "tasknum": 1,
+      "enabled": true,
+      "taskid": "1",
+      "filename": "1.c",
+      "cmakelistname": "61",
+      "testtype": "unit",
+      "comment": "Тесты содержатся в самом файле"
+    },{
+      "tasknum": 2,
+      "enabled": true,
+      "taskid": "2",
+      "filename": "2.c",
+      "cmakelistname": "62",
+      "testtype": "unit"
+    },
+
+}

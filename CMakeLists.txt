@@ -3,6 +3,8 @@ project(programming_and_algorithmization_basics C)
 
 set(CMAKE_C_STANDARD 11)
 
+add_subdirectory(./lab6/sharedfuncs)
+
 # First lab executables
 add_executable(4A
         lab1/4A.c)
@@ -198,3 +200,19 @@ add_executable(797B_1
         lab5/797B_1.c)
 add_executable(797B_2
         lab5/797B_2.c)
+
+# Sixth lab executables
+add_subdirectory(./lab6/1)
+add_subdirectory(./lab6/2)
+add_subdirectory(./lab6/3)
+add_subdirectory(./lab6/4)
+add_subdirectory(./lab6/5)
+add_subdirectory(./lab6/6)
+add_subdirectory(./lab6/7)
+add_subdirectory(./lab6/8)
+add_subdirectory(./lab6/9)
+add_subdirectory(./lab6/10)
+add_subdirectory(./lab6/11)
+add_subdirectory(./lab6/12)
+add_subdirectory(./lab6/13)
+add_subdirectory(./lab6/14)
