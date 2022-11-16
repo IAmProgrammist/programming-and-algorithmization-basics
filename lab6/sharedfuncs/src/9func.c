@@ -7,7 +7,8 @@
  * @param b ссылка на второе значение
  */
 void sort2(float *a, float *b) {
-    if (*a > *b) swap(a, b);
+    if (*a > *b)
+        swap(a, b);
 }
 
 /**
@@ -17,5 +18,6 @@ void sort2(float *a, float *b) {
  * @param b ссылка на второе значение
  */
 void intSort2(int *a, int *b) {
-    if (*a > *b) intSwap(a, b);
+    if (*a > *b)
+        intSwap(a, b);
 }

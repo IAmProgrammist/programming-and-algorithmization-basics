@@ -21,5 +21,5 @@ void solveX2(double a, double b, double c) {
 
         printf("%.2lf %.2lf\n", x1, x2);
     } else
-        printf("Корней нет");
+        printf("Корней нет\n");
 }

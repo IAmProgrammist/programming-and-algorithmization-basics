@@ -9,6 +9,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(./lab6/sharedfuncs)
 
+
+add_executable(godhelp
+        godhelp/1.c)
+
 # First lab executables
 add_executable(4A
         lab1/4A.c)

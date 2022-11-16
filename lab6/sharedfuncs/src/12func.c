@@ -22,6 +22,7 @@ int getTriangleTypeLength(int a, int b, int c) {
             return 1;
         else if (bigSideSquare > sumOfSquaresOfSmallerSides)
             return 2;
-        else return 0;
+        else
+            return 0;
     } else return -1;
 }
