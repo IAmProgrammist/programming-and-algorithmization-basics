@@ -4,7 +4,7 @@ int getMaximumLength(unsigned long long x) {
     int maxLen = 0;
     int currLen = 0;
 
-    while (x != 0) {
+    while (x) {
         if (x & 1) {
             currLen += 1;
 

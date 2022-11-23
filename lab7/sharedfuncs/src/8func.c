@@ -9,7 +9,7 @@ void cycleShift(unsigned long long *pX, int k) {
         *pX = 0;
         int pow = 1;
 
-        while (copyX != 1) {
+        while (copyX & (~1)) {
             *pX += (copyX & 1) << pow;
             copyX >>= 1;
             pow++;

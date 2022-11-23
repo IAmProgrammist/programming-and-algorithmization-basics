@@ -6,7 +6,7 @@
 void invertHex(unsigned long long *x) {
     unsigned long long reversedX = 0;
 
-    while (*x > 0) {
+    while (*x) {
         reversedX = (reversedX << HEX_BLOCK_LEN) + (*x & HEX_FULL_BLOCK);
         *x >>= HEX_BLOCK_LEN;
     }
