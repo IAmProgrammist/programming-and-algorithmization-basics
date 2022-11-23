@@ -4,13 +4,13 @@ unsigned long long removeEverySecondDigit(unsigned long long x) {
     unsigned long long variantA = 0, variantB = 0;
 
     int i;
-    for (i = 0; i < 8 * sizeof(x) && (x >> i); i++) {
-        int digit = ((x >> i) % 2);
+    for (i = 0; x; x >>= 1, i++) {
+        unsigned long long digit = x % 2;
 
         if (i % 2)
-            variantA += digit << (i / 2);
+            variantA += digit << (i >> 1);
         else
-            variantB += digit << (i / 2);
+            variantB += digit << (i >> 1);
     }
 
     if (i % 2)

@@ -2,7 +2,7 @@
 
 #define OCT_BLOCK_BINARY_SIZE 3
 #define OCT_FULL_BLOCK 7ll
-#define LONG_LONG_BIT_SIZE (8 * sizeof(unsigned long long))
+#define LONG_LONG_BIT_SIZE (sizeof(unsigned long long) << 3)
 
 char getOctDigit(unsigned long long x, int at) {
     return (x >> (LONG_LONG_BIT_SIZE - 1 - at)) & OCT_FULL_BLOCK;
