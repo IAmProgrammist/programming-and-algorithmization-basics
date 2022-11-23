@@ -1,0 +1,68 @@
+{
+  "tasks": [
+
+    {
+      "tasknum": 1,
+      "enabled": true,
+      "taskid": "1",
+      "cmakelistname": "71",
+      "testtype": "mock",
+      "tests": [
+        {
+          "input": "0",
+          "output": "0",
+          "explanation": "Самое маленькое число"
+        }, {
+          "input": "1437",
+          "output": "2635",
+          "explanation": "Случайное число"
+        }, {
+          "input": "2739128",
+          "output": "12345670",
+          "explanation": "Все числа восьмеричной системы"
+        },
+        {
+          "input": "18446744073709551615",
+          "output": "1777777777777777777777",
+          "explanation": "Максимальное число"
+        }
+      ]
+    },
+    {
+      "tasknum": 3,
+      "enabled": true,
+      "taskid": "2",
+      "cmakelistname": "74",
+      "testtype": "unit"
+    },
+    {
+      "tasknum": 4,
+      "enabled": true,
+      "taskid": "3",
+      "cmakelistname": "77",
+      "testtype": "unit"
+    },
+    {
+      "tasknum": 5,
+      "enabled": true,
+      "taskid": "4",
+      "cmakelistname": "78",
+      "testtype": "unit"
+    },
+    {
+      "tasknum": 6,
+      "enabled": true,
+      "taskid": "5",
+      "cmakelistname": "79",
+      "testtype": "unit"
+    },
+    {
+      "tasknum": 7,
+      "enabled": true,
+      "taskid": "6",
+      "cmakelistname": "710",
+      "testtype": "unit"
+    }
+
+  ]
+}

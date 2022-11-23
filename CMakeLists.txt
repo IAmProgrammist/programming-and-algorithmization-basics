@@ -222,3 +222,17 @@ add_subdirectory(./lab6/13)
 add_subdirectory(./lab6/14)
 add_subdirectory(./lab6/15)
 add_subdirectory(./lab6/16)
+
+# Sixth lab executables
+add_subdirectory(./lab7/1)
+add_subdirectory(./lab7/2)
+add_subdirectory(./lab7/3)
+add_subdirectory(./lab7/4)
+add_subdirectory(./lab7/5)
+add_subdirectory(./lab7/6)
+add_subdirectory(./lab7/7)
+add_subdirectory(./lab7/8)
+add_subdirectory(./lab7/9)
+add_subdirectory(./lab7/10)
+add_executable(1037A
+        ./lab7/1037A.c)

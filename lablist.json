@@ -13,6 +13,12 @@
       "testsfilename": "tests.json",
       "testsfilepath": "./lab6",
       "enabled": true
+    },{
+      "labid": 7,
+      "labname": "Побитовые операции",
+      "testsfilename": "tests.json",
+      "testsfilepath": "./lab7",
+      "enabled": true
     }
   ]
 }

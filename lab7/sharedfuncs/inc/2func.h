@@ -1,0 +1,6 @@
+#ifndef PROGRAMMING_AND_ALGORITHMIZATION_BASICS_7_2FUNC_H
+#define PROGRAMMING_AND_ALGORITHMIZATION_BASICS_7_2FUNC_H
+
+unsigned long long deleteOctNumber(unsigned long long x, int removeDigit);
+
+#endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_7_2FUNC_H
