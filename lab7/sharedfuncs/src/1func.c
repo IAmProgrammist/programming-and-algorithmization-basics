@@ -4,10 +4,20 @@
 #define OCT_FULL_BLOCK 7ll
 #define LONG_LONG_BIT_SIZE (sizeof(unsigned long long) << 3)
 
+/** <p>Заголовок: <code>char getOctDigit(unsigned long long x, int at)</code></p>
+ * <p>Назначение: возвращает цифру в восьмеричном виде числа <code>x</code> на позиции <code>at</code> с левого конца числа в двоичном коде.</p>
+ * @param x значение в котором будет искаться цифра
+ * @param at позиция цифры в числе <code>x</code>
+ * @return цифру в восьмеричном виде числа <code>x</code> на позиции <code>at</code> с левого конца числа в двоичном коде.
+ */
 char getOctDigit(unsigned long long x, int at) {
     return (x >> (LONG_LONG_BIT_SIZE - 1 - at)) & OCT_FULL_BLOCK;
 }
 
+/** <p>Заголовок: <code>void printOct(unsigned long long x)</code></p>
+ * <p>Назначение: выводит восьмеричное представление числа <code>x</code></p>
+ * @param x значение которое нужно вывести в восьмеричной системе счисления
+ */
 void printOct(unsigned long long x) {
     if (x == 0) {
         printf("0\n");
