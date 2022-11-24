@@ -19,8 +19,7 @@ int reverseNum(int n) {
 
 /**
  * <p>Заголовок: <code>bool isNumberPalindrome(int n)</code></p>
- * <p>Назначение: проверяет, является ли число <code>n</code> палиндромом (читается задом-наперёд одинаково)
- * @param n проверяемое значение
+ * <p>Назначение: возвращает “истина” если <code>n</code> – палиндром, иначе – “ложь”.
  * @return true, если <code>n</code> - палиндром
  * @return false, если <code>n</code> - не палиндром
  */
@@ -30,9 +29,9 @@ bool isNumberPalindrome(int n) {
 
 /**
  * <p>Заголовок: <code>int countPalindromeNumbers(int n)</code></p>
- * <p>Назначение: подсчитывает количество чисел-палиндромов от 1 до <code>n</code> включительно
+ * <p>Назначение: возвращает количество чисел-палиндромов от 1 до <code>n</code> включительно
  * @param n значение до которого будут проверяться палиндромы
- * @return количество палиндромов от 1 до n включительно
+ * @return количество палиндромов от 1 до <code>n</code> включительно
  */
 int countPalindromeNumbers(int n) {
     int palindromeCounter = 0;

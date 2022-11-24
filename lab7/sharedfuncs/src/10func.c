@@ -6,7 +6,7 @@
 unsigned long long getInvertedByte(unsigned long long x) {
     unsigned long long reversedByteNumber = 0;
 
-    while (x != 0) {
+    while (x) {
         reversedByteNumber = (reversedByteNumber << BYTE_BLOCK_LEN) + (x & BYTE_FULL_BLOCK);
         x >>= BYTE_BLOCK_LEN;
     }
