@@ -80,6 +80,7 @@ void registerTestFromFilePath(const char *filePath, const char *taskPath, report
     cJSON *reportObject = generateReportJSON(formattedInput, formattedOutput);
     char *source = readFileContents(filePath);
     cJSON *rootObject = cJSON_Parse(source);
+
     registerToJSONTestFromJSON(rootObject, taskPath, reportObject);
 
     cJSON_Delete(rootObject);
