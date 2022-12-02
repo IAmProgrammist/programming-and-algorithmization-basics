@@ -17,6 +17,8 @@ int reverseNum(int n) {
     return reversedNum;
 }
 
+extern inline int holyCrap(int f);
+
 /**
  * <p>Заголовок: <code>bool isNumberPalindrome(int n)</code></p>
  * <p>Назначение: возвращает “истина” если <code>n</code> – палиндром, иначе – “ложь”.

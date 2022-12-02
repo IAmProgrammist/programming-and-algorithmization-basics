@@ -8,6 +8,10 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(./lab6/sharedfuncs)
+add_subdirectory(./lab7/sharedfuncs)
+add_subdirectory(./lab8/sharedfuncs)
+add_subdirectory(./libs/labtestgenerator)
+add_subdirectory(./libs/cJSON)
 
 # First lab executables
 add_executable(4A
@@ -206,6 +210,7 @@ add_executable(797B_2
         lab5/797B_2.c)
 
 # Sixth lab executables
+add_subdirectory(./lab6/0)
 add_subdirectory(./lab6/1)
 add_subdirectory(./lab6/2)
 add_subdirectory(./lab6/3)
@@ -223,7 +228,7 @@ add_subdirectory(./lab6/14)
 add_subdirectory(./lab6/15)
 add_subdirectory(./lab6/16)
 
-# Sixth lab executables
+# Seventh lab executables
 add_subdirectory(./lab7/1)
 add_subdirectory(./lab7/2)
 add_subdirectory(./lab7/3)
@@ -236,3 +241,18 @@ add_subdirectory(./lab7/9)
 add_subdirectory(./lab7/10)
 add_executable(1037A
         ./lab7/1037A.c)
+
+# Seventh lab executables
+add_subdirectory(./lab8/1)
+add_subdirectory(./lab8/2)
+add_subdirectory(./lab8/5)
+add_subdirectory(./lab8/7)
+add_subdirectory(./lab8/9)
+add_subdirectory(./lab8/10)
+add_subdirectory(./lab8/11)
+add_subdirectory(./lab8/12)
+add_subdirectory(./lab8/18)
+add_subdirectory(./lab8/19)
+add_subdirectory(./lab8/20)
+add_subdirectory(./lab8/21)
+add_subdirectory(./lab8/22)
