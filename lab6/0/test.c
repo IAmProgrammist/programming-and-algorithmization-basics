@@ -4,11 +4,14 @@ void test() {
 }
 
 int main() {
-    for (unsigned long long i = 0; i < 0xffffffffffffffffull; i++)
 
-        registerTestFromFilePath(
-                "C:\\Users\\vladi\\Workspace\\C\\programming-and-algorithmization-basics\\lab6\\tests.json", "tests",
-                "you look", "stupid");
+    registerTestFromFilePath(
+            "/home/vlad/Desktop/aboba.json", "tasks",
+            "you look", "stupid");
+
+    registerExpandedTestFromFilePath(
+            "/home/vlad/Desktop/aboba.json", "tasks",
+            "and also", "you smell bad", "weirdo");
 
     return 0;
 }

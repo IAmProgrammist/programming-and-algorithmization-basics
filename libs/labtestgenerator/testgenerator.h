@@ -5,6 +5,8 @@
 #include "../cJSON/cJSON_Utils.h"
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
 
 typedef const char * report;
 

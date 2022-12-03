@@ -1,6 +1,5 @@
+#include <sys/stat.h>
 #include "testgenerator.h"
-#include <stdio.h>
-#include <io.h>
 
 /*void registerTest(const char *testTaskPath) {
     cJSON *json = cJSON_Parse("{\"hellomessage\":\"Привет мир!\"}");
@@ -76,14 +75,34 @@ char *readFileContents(const char *filePath) {
     return source;
 }
 
+void *writeContent(const char *filePath, char *content) {
+    FILE *writefile = fopen(filePath, "w");
+    if (writefile != NULL) {
+        fprintf(writefile, content);
+    } else {
+        fprintf(stderr, "Didn't succeed to write contents to file %s", filePath);
+    }
+
+    fflush(writefile);
+    fclose(writefile);
+}
+
 void registerTestFromFilePath(const char *filePath, const char *taskPath, report formattedInput, report formattedOutput) {
     cJSON *reportObject = generateReportJSON(formattedInput, formattedOutput);
     char *source = readFileContents(filePath);
     cJSON *rootObject = cJSON_Parse(source);
 
+    if (rootObject == NULL)
+        rootObject = cJSON_CreateObject();
+
     registerToJSONTestFromJSON(rootObject, taskPath, reportObject);
 
+    char *outputData = cJSON_Print(rootObject);
+
+    writeContent(filePath, outputData);
+
     cJSON_Delete(rootObject);
+    free(outputData);
     free(source);
 }
 
@@ -98,10 +117,18 @@ void registerExpandedTestFromFilePath(const char *filePath, const char *taskPath
     cJSON *reportObject = generateExpandedReportJSON(formattedInput, formattedOutput, explanation);
     char *source = readFileContents(filePath);
     cJSON *rootObject = cJSON_Parse(source);
+
+    if (rootObject == NULL)
+        rootObject = cJSON_CreateObject();
+
     registerToJSONTestFromJSON(rootObject, taskPath, reportObject);
 
-    cJSON_Delete(reportObject);
+    char *outputData = cJSON_Print(rootObject);
+
+    writeContent(filePath, outputData);
+
     cJSON_Delete(rootObject);
+    free(outputData);
     free(source);
 }
 
@@ -121,17 +148,17 @@ void registerToJSONTestFromFilePath(const char *filePath, const char *taskPath, 
     free(source);
 }
 
-extern void registerToJSONTestFromJSON(cJSON *file, const char *taskPath, cJSON *report) {
+void registerToJSONTestFromJSON(cJSON *file, const char *taskPath, cJSON *report) {
     int beginIndex = 0;
 
-    while (strlen(taskPath + beginIndex) != 0) {
+    while (beginIndex < strlen(taskPath)) {
         int objectNameSize = 0;
         bool isEndPath;
         while (1) {
-            if (taskPath[objectNameSize] == '/') {
+            if (taskPath[objectNameSize + beginIndex] == '/') {
                 isEndPath = false;
                 break;
-            } else if (taskPath[objectNameSize] == '\0') {
+            } else if (taskPath[objectNameSize + beginIndex] == '\0') {
                 isEndPath = true;
                 break;
             }
@@ -140,7 +167,7 @@ extern void registerToJSONTestFromJSON(cJSON *file, const char *taskPath, cJSON 
         }
 
         char nextTaskPath[objectNameSize + 1];
-        strcpy_s(nextTaskPath, (objectNameSize + 1) * sizeof(char), taskPath + beginIndex);
+        strncpy(nextTaskPath, taskPath + beginIndex, (objectNameSize + 1) * sizeof(char));
         nextTaskPath[objectNameSize] = '\0';
         beginIndex += objectNameSize + 1;
 
@@ -162,8 +189,7 @@ extern void registerToJSONTestFromJSON(cJSON *file, const char *taskPath, cJSON 
             }
         } else {
             if (it == NULL)
-                file = cJSON_AddObjectToObject(file, nextTaskPath), taskPath + objectNameSize,
-                                           report;
+                file = cJSON_AddObjectToObject(file, nextTaskPath);
             else {
                 if (it->type != cJSON_Object) {
                     fprintf(stderr, "Intermediate object %s is not an object\n", nextTaskPath);
