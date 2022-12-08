@@ -1,14 +1,8 @@
 #include <sys/stat.h>
 #include "testgenerator.h"
 
-/*void registerTest(const char *testTaskPath) {
-    cJSON *json = cJSON_Parse("{\"hellomessage\":\"Привет мир!\"}");
-    const char *message = json->child;
-    mkdir("C:/Users/vladi/Desktop/ws/files");
-    FILE *writefile = fopen("C:/Users/vladi/Desktop/ws/files/gay.txt", "w");
-    fprintf(writefile, message);
-    //printf(message);
-}*/
+#define DEFAULT_REPORT_SIZE 8192
+#define LLONG_SIZE sizeof(long long)
 
 cJSON *generateReportJSON(report formattedInput, report formattedOutput) {
     cJSON *reportObject = cJSON_CreateObject();
@@ -75,7 +69,7 @@ char *readFileContents(const char *filePath) {
     return source;
 }
 
-void *writeContent(const char *filePath, char *content) {
+void writeContent(const char *filePath, char *content) {
     FILE *writefile = fopen(filePath, "w");
     if (writefile != NULL) {
         fprintf(writefile, content);
@@ -87,7 +81,8 @@ void *writeContent(const char *filePath, char *content) {
     fclose(writefile);
 }
 
-void registerTestFromFilePath(const char *filePath, const char *taskPath, report formattedInput, report formattedOutput) {
+void
+registerTestFromFilePath(const char *filePath, const char *taskPath, report formattedInput, report formattedOutput) {
     cJSON *reportObject = generateReportJSON(formattedInput, formattedOutput);
     char *source = readFileContents(filePath);
     cJSON *rootObject = cJSON_Parse(source);
@@ -200,4 +195,65 @@ void registerToJSONTestFromJSON(cJSON *file, const char *taskPath, cJSON *report
             }
         }
     }
+}
+
+char *prettyPrintArray(const void *const array, const size_t blockSize, const size_t arraySize, char *(*toString)(void *, size_t),
+                 bool includeBrackets) {
+    char *prettyPrintedArray = malloc(DEFAULT_REPORT_SIZE * sizeof(char));
+    prettyPrintedArray[0] = '\0';
+
+    if (includeBrackets)
+        prettyPrintedArray[0] = '{';
+
+    for (void *element = array; element < array + blockSize * arraySize; element += blockSize) {
+        void* copyElement = malloc(blockSize);
+        memcpy(copyElement, element, blockSize);
+        char *toStringed = toString(element, blockSize);
+        strcat(prettyPrintedArray, toString(element, blockSize));
+        strcat(prettyPrintedArray, ", ");
+
+        printf("%p %d\n", element, *((int*)element));
+
+        free(toStringed);
+        free(copyElement);
+    }
+
+    strcat(prettyPrintedArray, toString(array + blockSize * arraySize, blockSize));
+
+    if (includeBrackets)
+        strcat(prettyPrintedArray, "}");
+
+    return prettyPrintedArray;
+}
+
+char *toStringIntRegular(const void * const num, size_t blockSize) {
+    unsigned long long mask;
+    int8_t castNum8;
+    int8_t castNum16;
+    int8_t castNum32;
+    int8_t castNum64;
+    char *str = malloc(DEFAULT_REPORT_SIZE * sizeof(char));
+    switch (blockSize) {
+        case 1:
+            castNum8 = *((int8_t*) num);
+            sprintf(str, "%d", castNum8);
+            break;
+    }
+
+    char *str = malloc(DEFAULT_REPORT_SIZE * sizeof(char));
+    sprintf(str, "%lld", castNum);
+    return str;
+}
+
+char *toStringUIntRegular(const void * const num, size_t blockSize) {
+    if (blockSize > LLONG_SIZE) {
+        fprintf(stderr, "Failed to print number wider than unsigned long long type");
+        return "\0";
+    }
+
+    unsigned long long castNum = (*((unsigned long long *) num));
+
+    char *str = malloc(DEFAULT_REPORT_SIZE * sizeof(char));
+    sprintf(str, "%llu", castNum);
+    return str;
 }

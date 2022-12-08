@@ -7,6 +7,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 
 typedef const char * report;
 
@@ -27,5 +28,14 @@ void registerExpandedTestFromJSON(cJSON *file, const char* taskPath, report form
 void registerToJSONTestFromFilePath(const char* filePath, const char* taskPath, cJSON *report);
 
 void registerToJSONTestFromJSON(cJSON *file, const char *taskPath, cJSON *report);
+
+void writeContent(const char *filePath, char *content);
+
+char *prettyPrintArray(const void *const array, const size_t blockSize, const size_t arraySize, char *(*toString)(void *, size_t),
+                       bool includeBrackets) ;
+
+char *toStringIntRegular(const void * const num, size_t blockSize);
+
+char *toStringUIntRegular(const void * const num, size_t blockSize);
 
 #endif //TESTGENERATOR_H

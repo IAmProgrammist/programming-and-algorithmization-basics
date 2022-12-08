@@ -7,11 +7,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-add_subdirectory(./lab6/sharedfuncs)
-add_subdirectory(./lab7/sharedfuncs)
-add_subdirectory(./lab8/sharedfuncs)
-add_subdirectory(./libs/labtestgenerator)
-add_subdirectory(./libs/cJSON)
+add_subdirectory(./libs/alg)
 
 # First lab executables
 add_executable(4A
@@ -210,7 +206,6 @@ add_executable(797B_2
         lab5/797B_2.c)
 
 # Sixth lab executables
-add_subdirectory(./lab6/0)
 add_subdirectory(./lab6/1)
 add_subdirectory(./lab6/2)
 add_subdirectory(./lab6/3)
@@ -256,3 +251,11 @@ add_subdirectory(./lab8/19)
 add_subdirectory(./lab8/20)
 add_subdirectory(./lab8/21)
 add_subdirectory(./lab8/22)
+
+# Ninth lab
+add_executable(91 ./lab9/1/main.c)
+target_link_libraries(91 alg)
+add_executable(93 ./lab9/3/main.c)
+target_link_libraries(93 alg)
+add_executable(99 ./lab9/9/main.c)
+target_link_libraries(99 alg)

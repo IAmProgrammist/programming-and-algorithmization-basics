@@ -1,4 +1,4 @@
-#include "./../sharedfuncs/inc/14func.h"
+#include "../../libs/alg/alg.h"
 
 int main() {
     // Используется для mock-тестирования

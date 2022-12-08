@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/2func.h"
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(sign(-123123.0123) == -1);

@@ -1,5 +1,6 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/12func.h"
+
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(getTriangleTypeLength(1, 1, 13123) == -1);

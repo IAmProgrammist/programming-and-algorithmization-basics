@@ -1,5 +1,5 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/4func.h"
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(max3(12, 23, 42) == 42);

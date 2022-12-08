@@ -1,5 +1,6 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/15func.h"
+
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(reverseNum(123) == 321);

@@ -1,6 +1,5 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/5func.h"
-#include "utils.h"
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(fcompare(getDistance(0, 0, 5, 0), 5.0));

@@ -9,8 +9,4 @@ bool isNumberPalindrome(int n);
 
 int countPalindromeNumbers(int n);
 
-int gayshit(int f(int)) {
-    f(5);
-};
-
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_6_15FUNC_H

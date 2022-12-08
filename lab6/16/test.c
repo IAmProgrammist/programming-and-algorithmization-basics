@@ -1,5 +1,6 @@
-#include "./../sharedfuncs/inc/16func.h"
 #include <assert.h>
+
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(sumDigits(0) == 0);

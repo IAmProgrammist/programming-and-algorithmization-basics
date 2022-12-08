@@ -1,5 +1,6 @@
-#include "./../sharedfuncs/inc/7func.h"
 #include <assert.h>
+
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(!isDigit('a'));

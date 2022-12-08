@@ -1,5 +1,6 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/8func.h"
+
+#include "../../libs/alg/alg.h"
 
 void test() {
     float a = 5, b = 10;

@@ -1,5 +1,6 @@
-#include "./../sharedfuncs/inc/14func.h"
 #include <assert.h>
+
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(isNumberPerfect(1));

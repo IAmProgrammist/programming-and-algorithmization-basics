@@ -1,5 +1,6 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/11func.h"
+
+#include "../../libs/alg/alg.h"
 
 void test() {
     assert(isTrianglePossible(3, 4, 5));

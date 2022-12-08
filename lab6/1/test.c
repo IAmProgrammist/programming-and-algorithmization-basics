@@ -1,10 +1,11 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/1func.h"
+
+#include "../../libs/alg/alg.h"
 
 void test() {
-    assert(abs(0) == 0);
-    assert(abs(1234.6745) == 1234.6745);
-    assert(abs(-12.45) == 12.45);
+    assert(myAbs(0) == 0);
+    assert(myAbs(1234.6745) == 1234.6745);
+    assert(myAbs(-12.45) == 12.45);
 }
 
 int main() {

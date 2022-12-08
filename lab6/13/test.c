@@ -1,5 +1,6 @@
 #include <assert.h>
-#include "./../sharedfuncs/inc/13func.h"
+
+#include "../../libs/alg/alg.h"
 
 void test(bool (*isPrime) (int)) {
     assert(!isPrime(1));

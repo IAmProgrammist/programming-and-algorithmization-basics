@@ -5,6 +5,6 @@
 #include <corecrt.h>
 #include <stdio.h>
 
-void inputArray(int *array, const size_t size);
+void inputArray(int *const array, size_t size);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_8_1FUNC_H

@@ -5,6 +5,6 @@
 #include <corecrt.h>
 #include <stdio.h>
 
-void outputArray(const int *array, const size_t size);
+void outputArray(const int *const array, size_t size);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_8_2FUNC_H
