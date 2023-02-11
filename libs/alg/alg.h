@@ -3,9 +3,12 @@
 
 #include <stdbool.h>
 #include <math.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <assert.h>
+#include <ctype.h>
 
 
 // Comment a
@@ -49,14 +52,14 @@ int max2(int a, int b);
 int max3(int a, int b, int c);
 
 /**
- * <p>Заголовок: <code>double getDistance(int x1, int y1, int x2, int y2)</code>.</p>
+ * <p>Заголовок: <code>double getD(int x1, int y1, int x2, int y2)</code>.</p>
  * <p>Назначение: возвращает расстояние между двумя точками A(<code>x1</code>; <code>y1</code>) и B(<code>x2</code>; <code>y2</code>)
  * @param x1 координата x точки A
  * @param y1 координата y точки A
  * @param x2 координата x точки B
  * @param y2 координата y точки B
  */
-double getDistance(int x1, int y1, int x2, int y2);
+double getD(int x1, int y1, int x2, int y2);
 
 /**
  * <p>Заголовок: <code>void solveX2(double a, double b, double c)</code>.</p>
@@ -76,16 +79,19 @@ void solveX2(double a, double b, double c);
  */
 bool isDigit(char x);
 
+// обменивает значения по адресам a и b размером n
+void swap(void *a, void *b, size_t n);
+
 /**
- * <p>Заголовок: <code>void swap(float *a, float *b)</code>.</p>
+ * <p>Заголовок: <code>void swapFloat(float *a, float *b)</code>.</p>
  * <p>Назначение: обменивает значения по указателям <code>a</code>, <code>b</code>
  * @param a ссылка на первое значение
  * @param b ссылка на второе значение
  */
-void swap(float *a, float *b);
+void swapFloat(float *a, float *b);
 
 /**
- * <p>Заголовок: <code>void swap(int *a, int *b)</code>.</p>
+ * <p>Заголовок: <code>void swapFloat(int *a, int *b)</code>.</p>
  * <p>Назначение: обменивает значения по указателям <code>a</code>, <code>b</code>
  * @param a ссылка на первое значение
  * @param b ссылка на второе значение
@@ -338,5 +344,44 @@ void insertionSortByComparator(int *const array, size_t arraySize, bool (*compar
 
 bool isGeometricProgression(const int *const array, size_t arraySize);
 
+int countDigits();
+
+void printAsOct_(unsigned long long num);
+
+void printAsOct(unsigned long long num);
+
+int getGeometricalProgressionElement(int firstElement, int multiplier, unsigned elementNum);
+
+static size_t linearRecSearch_(const int * const array, size_t currentIndex, size_t arraySize, int searchElement);
+
+size_t linearRecSearchInArray(const int *const array, size_t arraySize, int searchElement);
+
+int isSortedNonDec(int *a, size_t arraySize);
+
+static int getFirstMinIndex_(int currentIndex, int currentMinValue, int currentMinIndex, size_t arraySize);
+
+int getFirstMinIndex(int n);
+
+static bool canFibbNumbersBeNeighbours_(int curA, int curB, int searchA, int searchB);
+
+bool canFibbNumbersBeNeighbours(int searchA, int searchB);
+
+void printEverythingBesidesDigits();
+
+int getFirstElementOfArithmeticProgression(int element, int number, int delta);
+
+static void printElementsOfSequence_(int lastElement, size_t size);
+
+void printElementsOfSequence(size_t size);
+
+bool any(int *array, size_t arraySize, bool (*predicate)(int));
+
+bool all(int *array, size_t arraySize, bool (*predicate)(int));
+
+ssize_t getFirstMinElementIndex_(const int *const array, ssize_t currentIndex, ssize_t arraySize);
+
+ssize_t getFirstMinElementIndex(const int *const array, ssize_t arraySize);
+
+void selectionSort(int *const array, ssize_t arraySize);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_ALG_H

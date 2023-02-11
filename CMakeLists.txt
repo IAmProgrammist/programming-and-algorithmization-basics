@@ -259,3 +259,30 @@ add_executable(93 ./lab9/3/main.c)
 target_link_libraries(93 alg)
 add_executable(99 ./lab9/9/main.c)
 target_link_libraries(99 alg)
+
+# Tenth lab
+add_executable(101 ./lab10/1.c)
+add_executable(104 ./lab10/4.c)
+add_executable(106 ./lab10/6.c)
+add_executable(1012 ./lab10/12.c)
+add_executable(1014 ./lab10/14.c)
+add_executable(1015 ./lab10/15.c)
+add_executable(1016 ./lab10/16.c)
+add_executable(1017 ./lab10/17.c)
+add_executable(1018 ./lab10/18.c)
+
+# Eleventh library
+add_executable(112 lab11/2.c)
+target_link_libraries(112 alg)
+add_executable(114 lab11/4.c)
+target_link_libraries(114 alg)
+add_executable(1110 lab11/10.c)
+target_link_libraries(1110 alg)
+add_executable(1112 lab11/12.c)
+target_link_libraries(1112 alg)
+
+# Twelfth library
+add_executable(12point lab12/point.c)
+target_link_libraries(12point point)
+add_executable(12circle lab12/circle.c)
+target_link_libraries(12circle circle)

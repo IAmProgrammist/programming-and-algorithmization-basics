@@ -1,12 +1,12 @@
 #include "12func.h"
 
-void selectionSort(int *a, const size_t n) {
-    for (size_t i = 1; i < n; i++) {
-        int t = a[i];
+void selectionSort(int *const array, ssize_t arraySize) {
+    for (size_t i = 1; i < arraySize; i++) {
+        int t = array[i];
         size_t j = i;
-        while (j > 0 && a[j - 1] > t)
+        while (j > 0 && array[j - 1] > t)
             j--;
 
-        a[i] = t;
+        array[i] = t;
     }
 }

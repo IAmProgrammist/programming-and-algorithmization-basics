@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <corecrt.h>
 
-void selectionSort(int *a, const size_t n);
+void selectionSort(int *const array, ssize_t arraySize);
 
 void swap(int *a, int *b);
 

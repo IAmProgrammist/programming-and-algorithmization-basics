@@ -2,7 +2,7 @@
 
 void sort2(float *a, float *b) {
     if (*a > *b)
-        swap(a, b);
+        swapFloat(a, b);
 }
 
 void intSort2(int *a, int *b) {
