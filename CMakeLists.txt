@@ -271,6 +271,7 @@ add_executable(1016 ./lab10/16.c)
 add_executable(1017 ./lab10/17.c)
 add_executable(1018 ./lab10/18.c)
 add_executable(1019 ./lab10/19.c)
+add_executable(1020 ./lab10/20.c)
 
 # Eleventh library
 add_executable(112 lab11/2.c)

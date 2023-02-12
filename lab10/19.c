@@ -50,14 +50,13 @@ int main() {
         workers[i] = (Worker) {balloonMakingTime, balloonAmount, relaxTime};
     }
 
-    balloons(14, workers, workersAmount);
-
     long long left = -1;
     long long right = 17000000000;
     Report fReport = {NULL, 0, 0};
 
+
     while (right - left > 1) {
-        long long middle = (right + left) / 2;
+        long long middle = left + (right - left) / 2;
         Report cReport = balloons(middle, workers, workersAmount);
         if (cReport.ballonsTotal < balloonsAmount) {
             left = middle;
