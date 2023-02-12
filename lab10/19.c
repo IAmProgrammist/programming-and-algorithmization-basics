@@ -5,6 +5,10 @@ long long min(long long a, long long b) {
     return a < b ? a : b;
 }
 
+long long max(long long a, long long b) {
+    return a > b ? a : b;
+}
+
 typedef struct Worker {
     long long balloonMakingTime;
     long long balloonAmount;
@@ -23,9 +27,10 @@ Report balloons(long long time, Worker *workers, int workersAmount) {
     for (int i = 0; i < workersAmount; i++) {
         Worker worker = workers[i];
         long long fullCycleTime = worker.balloonMakingTime * worker.balloonAmount + worker.relaxTime;
-        long long balloonsFullCycle = worker.balloonAmount * time / fullCycleTime;
-        long long timeLeft = time % fullCycleTime;
-        balloonsFullCycle += timeLeft / worker.balloonMakingTime;
+        long long balloonsFullCycle = (time / fullCycleTime) * worker.balloonAmount;
+        long long timeLeft = max(0, time - (fullCycleTime * balloonsFullCycle / worker.balloonAmount));
+        balloonsFullCycle += min(timeLeft, worker.balloonMakingTime * worker.balloonAmount) /
+                worker.balloonMakingTime;
         report.ballonsTotal += balloonsFullCycle;
         report.workersReport[i] = balloonsFullCycle;
     }
@@ -44,6 +49,8 @@ int main() {
         scanf("%lld %lld %lld", &balloonMakingTime, &balloonAmount, &relaxTime);
         workers[i] = (Worker) {balloonMakingTime, balloonAmount, relaxTime};
     }
+
+    balloons(14, workers, workersAmount);
 
     long long left = -1;
     long long right = 17000000000;
