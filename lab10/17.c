@@ -7,13 +7,12 @@ long long max(long long a, long long b) {
     return a > b ? a : b;
 }
 
-long long
-moneyRequire(long long int sandvichAmount, int bread, int sausage, int cheese, int amount, int amount1, int amount2,
-             int price,
-             int price1, int price2) {
-    return max(sandvichAmount * bread - amount, 0) * price +
-           max(sandvichAmount * sausage - amount1, 0) * price1 +
-           max(sandvichAmount * cheese - amount2, 0) * price2;
+long long moneyRequire(long long int hamburgerAmount, int breadInHamburger, int sausageInHamburger, int cheeseInHamburger,
+             int breadAmount, int sausageAmount, int cheeseAmount,
+             int breadPrice, int sausagePrice, int cheesePrice) {
+    return max(hamburgerAmount * breadInHamburger - breadAmount, 0) * breadPrice +
+           max(hamburgerAmount * sausageInHamburger - sausageAmount, 0) * sausagePrice +
+           max(hamburgerAmount * cheeseInHamburger - cheeseAmount, 0) * cheesePrice;
 }
 
 void getRecipe(char *recipe, int *nBread, int *nSausage, int *nCheese) {
@@ -58,7 +57,7 @@ int main() {
     long long right = 100000000000000;
 
     while (right - left > 1) {
-        long long middle = (right + left) / 2;
+        long long middle = left + (right - left) / 2;
 
         if (moneyRequire(middle, nBread, nSausage, nCheese,
                          bAmount, sAmount, cAmount,

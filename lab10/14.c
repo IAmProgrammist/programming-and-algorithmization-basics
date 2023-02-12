@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+int timePassed(int gate, int lapsDone, int fanZonesTotal) {
+    return gate + lapsDone * fanZonesTotal;
+}
+
 int main() {
     int fanZones;
     scanf("%d", &fanZones);
@@ -14,15 +18,15 @@ int main() {
         int right = (order - i) / fanZones + 1;
 
         while (right - left > 1) {
-            int middle = (left + right) / 2;
+            int middle = left + (right - left) / 2;
 
-            if (i + middle * fanZones < order)
+            if (timePassed(i, middle, fanZones) < order)
                 left = middle;
             else
                 right = middle;
         }
 
-        int time = i + right * fanZones;
+        int time = timePassed(i, right, fanZones);
 
         if (time < minimalTime || gate == 0) {
             minimalTime = time;

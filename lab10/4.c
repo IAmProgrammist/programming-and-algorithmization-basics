@@ -12,7 +12,6 @@ int main() {
     scanf("%d", &arraySize);
 
     int *array = (int *) malloc(sizeof(int) * arraySize);
-
     for (int i = 0; i < arraySize; i++)
         scanf("%d", array + i);
 

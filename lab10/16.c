@@ -6,6 +6,26 @@ long long max(long long a, long long b) {
     return a > b ? a : b;
 }
 
+long long countCuts(long long sectionMaxSum, long long const *const numberArray, int arraySize) {
+    long long tempSum = 0, cuts = 0;
+
+    for (int i = 0; i < arraySize; i++) {
+        if (tempSum + numberArray[i] > sectionMaxSum) {
+            cuts++;
+            tempSum = 0;
+        }
+
+        if (numberArray[i] > sectionMaxSum) {
+            cuts = -1;
+            break;
+        }
+
+        tempSum += numberArray[i];
+    }
+
+    return cuts;
+}
+
 int main() {
     int n;
     long long k;
@@ -23,28 +43,14 @@ int main() {
     while (right - left > 1) {
         long long middleNum = left + (right - left) / 2;
 
-        long long cuts = 0;
-        long long tempSum = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (tempSum + array[i] > middleNum) {
-                cuts++;
-                tempSum = 0;
-            }
-
-            if (array[i] > middleNum) {
-                cuts = -1;
-                break;
-            }
-
-            tempSum += array[i];
-        }
-
+        long long cuts = countCuts(middleNum, array, n);
         if (cuts < k && cuts != -1)
             right = middleNum;
         else
             left = middleNum;
     }
+
+    free(array);
 
     printf("%lld", right);
 }

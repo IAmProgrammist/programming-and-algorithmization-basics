@@ -6,7 +6,6 @@ int main() {
     scanf("%d %d", &arraySize, &requestAmount);
 
     int *array = (int *) malloc(sizeof(int) * arraySize);
-
     for (int i = 0; i < arraySize; i++)
         scanf("%d", array + i);
 

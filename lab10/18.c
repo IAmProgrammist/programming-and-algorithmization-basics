@@ -16,12 +16,12 @@ long long min(long long a, long long b) {
 }
 
 int main() {
-    int heroesAmount;
-    scanf("%d", &heroesAmount);
+    long long heroesAmount;
+    scanf("%lld", &heroesAmount);
 
     long long *heroesPower = (long long *) malloc(sizeof(long long) * heroesAmount);
     long long totalHeroPower = 0;
-    for (int i = 0; i < heroesAmount; i++) {
+    for (long long i = 0; i < heroesAmount; i++) {
         scanf("%lld", heroesPower + i);
 
         totalHeroPower += heroesPower[i];
@@ -39,7 +39,7 @@ int main() {
         long long left = -1;
         long long right = heroesAmount;
         while (right - left > 1) {
-            long long middle = (right + left) / 2;
+            long long middle = left + (right - left) / 2;
 
             if (heroesPower[middle] < defendingDragonPower)
                 left = middle;
@@ -50,7 +50,7 @@ int main() {
         long long totalMoneySpent;
         if (left == -1)
             totalMoneySpent = max(0, defendingDragonPower - heroesPower[right]) +
-                                  max(0, attackingDragonPower - (totalHeroPower - heroesPower[right]));
+                              max(0, attackingDragonPower - (totalHeroPower - heroesPower[right]));
         else if (right == heroesAmount)
             totalMoneySpent = max(0, defendingDragonPower - heroesPower[left]) +
                               max(0, attackingDragonPower - (totalHeroPower - heroesPower[left]));
@@ -60,10 +60,10 @@ int main() {
                                   max(0, defendingDragonPower - heroesPower[left]) +
                                   max(0, attackingDragonPower - (totalHeroPower - heroesPower[left])));
 
-
-
         printf("%lld\n", totalMoneySpent);
     }
+
+    free(heroesPower);
 
     return 0;
 }

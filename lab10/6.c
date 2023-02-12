@@ -1,5 +1,4 @@
 #include "stdio.h"
-#include "math.h"
 
 int printedPages(int x, int y, int time) {
     return time / x + time / y;

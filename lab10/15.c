@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 int numComparator(const void *a, const void *b) {
     if (*((long long *) a) > *((long long *) b)) return 1;
@@ -10,6 +9,14 @@ int numComparator(const void *a, const void *b) {
 
 long long max(long long a, long long b) {
     return a > b ? a : b;
+}
+
+long long countRequiredSum(long long newNumber, long long const *const numberArray, int arraySize) {
+    long long requiredSum = 0;
+    for (int i = arraySize / 2; i < arraySize; i++)
+        requiredSum += max(0, newNumber - numberArray[i]);
+
+    return requiredSum;
 }
 
 int main() {
@@ -29,16 +36,13 @@ int main() {
     while (right - left > 1) {
         long long middleNum = left + (right - left) / 2;
 
-        long long requiredSum = 0;
-
-        for (int i = n / 2; i < n; i++)
-            requiredSum += max(0, middleNum - array[i]);
-
-        if (requiredSum <= k)
+        if (countRequiredSum(middleNum, array, n) <= k)
             left = middleNum;
         else
             right = middleNum;
     }
+
+    free(array);
 
     printf("%lld", left);
 }
