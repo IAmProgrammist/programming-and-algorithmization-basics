@@ -19,6 +19,12 @@
       "testsfilename": "tests.json",
       "testsfilepath": "./lab7",
       "enabled": true
+    },{
+      "labid": 15,
+      "labname": "Создание библиотеки для работы с многомерными массивами",
+      "testsfilename": "tests.json",
+      "testsfilepath": "./lab15",
+      "enabled": true
     }
   ]
 }

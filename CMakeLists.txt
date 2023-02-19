@@ -9,7 +9,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(./libs/alg)
 add_subdirectory(./libs/data_structures/matrix)
-add_executable(asd ./sauce.c)
 
 # First lab executables
 add_executable(4A

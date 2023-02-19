@@ -54,19 +54,14 @@ void outputMatrices(Matrix *ms, int nMatrices) {
 void swapRows(Matrix m, int i1, int i2) {
     assert(i1 < m.nRows && i2 < m.nRows && i1 >= 0 && i2 >= 0);
 
-    int *tRow = m.values[i1];
-    m.values[i1] = m.values[i2];
-    m.values[i2] = tRow;
+    swap(m.values + i1, m.values + i2, sizeof(m.values[0]));
 }
 
 void swapColumns(Matrix m, int j1, int j2) {
     assert(j1 < m.nCols && j2 < m.nCols && j1 >= 0 && j2 >= 0);
 
-    for (int i = 0; i < m.nRows; i++) {
-        int t = m.values[i][j1];
-        m.values[i][j1] = m.values[i][j2];
-        m.values[i][j2] = t;
-    }
+    for (int i = 0; i < m.nRows; i++)
+        swap(&m.values[i][j1], &m.values[i][j2], sizeof(m.values[0][0]));
 }
 
 void insertionSortRowsMatrixByRowCriteria(Matrix m,
@@ -77,16 +72,18 @@ void insertionSortRowsMatrixByRowCriteria(Matrix m,
     for (int i = 0; i < m.nRows; i++)
         keys[i] = criteria(m.values[i], m.nCols);
 
-    for (int i = 0; i < m.nRows - 1; i++) {
-        int minIndex = i;
-        for (int j = i + 1; j < m.nRows; j++)
-            if (keys[j] < keys[minIndex])
-                minIndex = j;
+    for (int i = 1; i < m.nRows; i++) {
+        int tKey = keys[i];
+        int* tRow = m.values[i];
+        int j = i;
+        while (j > 0 && keys[j - 1] > tKey) {
+            keys[j] = keys[j - 1];
+            m.values[j] = m.values[j - 1];
+            j--;
+        }
 
-        swapRows(m, minIndex, i);
-        int key = keys[i];
-        keys[i] = keys[minIndex];
-        keys[minIndex] = key;
+        keys[j] = tKey;
+        m.values[j] = tRow;
     }
 
     free(keys);
@@ -113,9 +110,7 @@ void selectionSortColsMatrixByColCriteria(Matrix m,
                 minIndex = j;
 
         swapColumns(m, minIndex, i);
-        int key = keys[i];
-        keys[i] = keys[minIndex];
-        keys[minIndex] = key;
+        swap(keys + i, keys + minIndex, sizeof(keys[0]));
     }
 
     free(keys);
@@ -176,7 +171,7 @@ void transposeMatrix(Matrix *m) {
 
     for (int i = 0; i < m->nRows; i++)
         for (int j = 0; j < m->nCols; j++)
-            newMatrix.values[i][j] = m->values[j][i];
+            newMatrix.values[j][i] = m->values[i][j];
 
     freeMemMatrix(*m);
     *m = newMatrix;
@@ -184,30 +179,24 @@ void transposeMatrix(Matrix *m) {
 
 Position getMinValuePos(Matrix m) {
     assert(m.nRows >= 1 && m.nCols >= 1);
-    int minValue = m.values[0][0];
     Position minValuePosition = {0, 0};
 
     for (int i = 0; i < m.nRows; i++)
         for (int j = 0; j < m.nCols; j++)
-            if (m.values[i][j] < minValue) {
-                minValue = m.values[i][j];
+            if (m.values[i][j] < m.values[minValuePosition.rowIndex][minValuePosition.colIndex])
                 minValuePosition = (Position) {i, j};
-            }
 
     return minValuePosition;
 }
 
 Position getMaxValuePos(Matrix m) {
     assert(m.nRows >= 1 && m.nCols >= 1);
-    int maxValue = m.values[0][0];
     Position maxValuePosition = {0, 0};
 
     for (int i = 0; i < m.nRows; i++)
         for (int j = 0; j < m.nCols; j++)
-            if (m.values[i][j] > maxValue) {
-                maxValue = m.values[i][j];
+            if (m.values[i][j] > m.values[maxValuePosition.rowIndex][maxValuePosition.colIndex])
                 maxValuePosition = (Position) {i, j};
-            }
 
     return maxValuePosition;
 }
@@ -229,6 +218,6 @@ Matrix *createArrayOfMatrixFromArray(const int *values,
     Matrix *matrixArray = (Matrix *) malloc(sizeof(Matrix) * nMatrices);
     int k = 0;
     for (int i = 0; i < nMatrices; i++)
-        matrixArray[i] = createMatrixFromArray(values + k * nRows * nCols, nRows, nCols);
+        matrixArray[i] = createMatrixFromArray(values + (k++) * nRows * nCols, nRows, nCols);
     return matrixArray;
 }

@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
+#include "../../alg/alg.h"
 
 typedef struct Matrix {
     int **values; // элементы матрицы
