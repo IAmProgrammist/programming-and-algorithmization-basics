@@ -8,6 +8,8 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(./libs/alg)
+add_subdirectory(./libs/data_structures/matrix)
+add_executable(asd ./sauce.c)
 
 # First lab executables
 add_executable(4A
@@ -288,3 +290,7 @@ add_executable(12point lab12/point.c)
 target_link_libraries(12point point)
 add_executable(12circle lab12/circle.c)
 target_link_libraries(12circle circle)
+
+# Fifteenth library
+add_executable(15matrix lab15/main.c)
+target_link_libraries(15matrix matrix)
