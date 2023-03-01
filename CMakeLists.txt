@@ -293,3 +293,7 @@ target_link_libraries(12circle circle)
 # Fifteenth library
 add_executable(15matrix lab15/main.c)
 target_link_libraries(15matrix matrix)
+
+# Sixteenth library
+add_executable(16matrix lab16/main.c)
+target_link_libraries(16matrix matrix)
