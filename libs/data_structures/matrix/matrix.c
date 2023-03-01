@@ -74,7 +74,7 @@ void insertionSortRowsMatrixByRowCriteria(Matrix m,
 
     for (int i = 1; i < m.nRows; i++) {
         int tKey = keys[i];
-        int* tRow = m.values[i];
+        int *tRow = m.values[i];
         int j = i;
         while (j > 0 && keys[j - 1] > tKey) {
             keys[j] = keys[j - 1];
@@ -125,7 +125,7 @@ bool areTwoMatricesEqual(Matrix m1, Matrix m2) {
         return false;
 
     for (int i = 0; i < m1.nRows; i++)
-        if(memcmp(m1.values[i], m2.values[i], sizeof(int) * m1.nCols))
+        if (memcmp(m1.values[i], m2.values[i], sizeof(int) * m1.nCols))
             return false;
 
     return true;
@@ -232,4 +232,33 @@ void transposeIfMatrixHasNotEqualSumOfRows(Matrix m) {
         transposeSquareMatrix(m);
 
     free(rowSums);
+}
+
+Matrix mulMatrices(Matrix m1, Matrix m2) {
+    assert(isSquareMatrix(m1) && isSquareMatrix(m2) && m1.nRows == m2.nRows);
+
+    Matrix multipliedMatrix = getMemMatrix(m1.nRows, m1.nRows);
+
+    for (int i = 0; i < m1.nRows; i++) {
+        for (int j = 0; j < m1.nCols; j++) {
+            int arrayElement = 0;
+
+            for(int k = 0; k < m1.nCols; k++)
+                arrayElement += m1.values[i][k] * m2.values[k][j];
+
+            multipliedMatrix.values[i][j] = arrayElement;
+        }
+    }
+
+    return multipliedMatrix;
+}
+
+bool isMutuallyInverseMatrices(Matrix m1, Matrix m2) {
+    Matrix multiplication = mulMatrices(m1, m2);
+
+    bool isMutuallyInversed = isEMatrix(multiplication);
+
+    freeMemMatrix(multiplication);
+
+    return isMutuallyInversed;
 }

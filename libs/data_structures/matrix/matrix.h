@@ -69,4 +69,8 @@ Matrix *createArrayOfMatrixFromArray(const int *values,
 
 void transposeIfMatrixHasNotEqualSumOfRows(Matrix m);
 
+Matrix mulMatrices(Matrix m1, Matrix m2);
+
+bool isMutuallyInverseMatrices(Matrix m1, Matrix m2);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_MATRIX_H
