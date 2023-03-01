@@ -7,7 +7,9 @@ SET(lab9funcs ./lab9/1func.c ./lab9/3func.c ./lab9/9func.c)
 SET(lab11funcs ./lab11/1func.c ./lab11/2func.c ./lab11/3func.c ./lab11/4func.c ./lab11/5func.c ./lab11/6func.c
         ./lab11/6func.c ./lab11/7func.c ./lab11/8func.c ./lab11/10func.c ./lab11/11func.c ./lab11/12func.c ./lab11/13func.c)
 
-add_library(alg alg.h ${lab6funcs} ${lab9funcs} ${lab11funcs})
+SET(lab16funcs ./lab16/5func.c)
+
+add_library(alg alg.h ${lab6funcs} ${lab9funcs} ${lab11funcs} ${lab16funcs})
 
 target_link_libraries(alg m)
 

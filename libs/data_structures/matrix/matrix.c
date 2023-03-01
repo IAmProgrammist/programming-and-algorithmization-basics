@@ -221,3 +221,15 @@ Matrix *createArrayOfMatrixFromArray(const int *values,
         matrixArray[i] = createMatrixFromArray(values + (k++) * nRows * nCols, nRows, nCols);
     return matrixArray;
 }
+
+void transposeIfMatrixHasNotEqualSumOfRows(Matrix m) {
+    long long *rowSums = (long long *) malloc(sizeof(long long) * m.nRows);
+
+    for (int i = 0; i < m.nRows; i++)
+        rowSums[i] = getSum(m.values[i], m.nCols);
+
+    if (isUnique(rowSums, m.nRows))
+        transposeSquareMatrix(m);
+
+    free(rowSums);
+}

@@ -384,4 +384,8 @@ ssize_t getFirstMinElementIndex(const int *const array, ssize_t arraySize);
 
 void selectionSort(int *const array, ssize_t arraySize);
 
+bool isUnique(long long *a, int n);
+
+long long getSum(int *a, int n);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_ALG_H

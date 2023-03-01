@@ -40,10 +40,10 @@ void swapRows(Matrix m, int i1, int i2);
 void swapColumns(Matrix m, int j1, int j2);
 
 void insertionSortRowsMatrixByRowCriteria(Matrix m,
-                                          int (*criteria)(int*, int));
+                                          int (*criteria)(int *, int));
 
 void selectionSortColsMatrixByColCriteria(Matrix m,
-                                          int (*criteria)(int*, int));
+                                          int (*criteria)(int *, int));
 
 bool isSquareMatrix(Matrix m);
 
@@ -66,5 +66,7 @@ Matrix createMatrixFromArray(const int *a, int nRows,
 
 Matrix *createArrayOfMatrixFromArray(const int *values,
                                      size_t nMatrices, int nRows, int nCols);
+
+void transposeIfMatrixHasNotEqualSumOfRows(Matrix m);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_MATRIX_H
