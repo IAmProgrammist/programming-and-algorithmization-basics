@@ -58,9 +58,48 @@ void testIsMutuallyInverseMatrices() {
     freeMemMatrix(m2);
 }
 
+void testCountNonDescendingRowsMatrices() {
+    Matrix *matrices = createArrayOfMatrixFromArray((int[]){7, 1,
+                                                            1, 1,
+
+                                                            1, 6,
+                                                            2, 2,
+
+                                                            5,4,
+                                                            2,3,
+
+                                                            1,3,
+                                                            7,9}, 4, 2, 2);
+
+    assert(countNonDescendingRowsMatrices(matrices, 4) == 2);
+
+    freeMemMatrices(matrices, 4);
+
+    matrices = createArrayOfMatrixFromArray((int[]){7, 3,
+                                                            6, 2,
+                                                            42, 2,
+
+                                                            1, 6,
+                                                            2, 2,
+                                                            8, 9,
+
+                                                            1, 1,
+                                                            2, 2,
+                                                            3, 3,
+
+                                                            1,3,
+                                                            9,7,
+                                                            7, 7}, 4, 3, 2);
+
+    assert(countNonDescendingRowsMatrices(matrices, 4) == 2);
+
+    freeMemMatrices(matrices, 4);
+}
+
 void test() {
     testTransposeIfMatrixHasNotEqualSumOfRows();
     testIsMutuallyInverseMatrices();
+    testCountNonDescendingRowsMatrices();
 }
 
 int main() {

@@ -73,4 +73,8 @@ Matrix mulMatrices(Matrix m1, Matrix m2);
 
 bool isMutuallyInverseMatrices(Matrix m1, Matrix m2);
 
+bool hasAllNonDescendingRows(Matrix m);
+
+int countNonDescendingRowsMatrices(Matrix *ms, int nMatrix);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_MATRIX_H

@@ -262,3 +262,21 @@ bool isMutuallyInverseMatrices(Matrix m1, Matrix m2) {
 
     return isMutuallyInversed;
 }
+
+bool hasAllNonDescendingRows(Matrix m) {
+    for (int i = 0; i < m.nRows; i++) {
+        if (!isNonDescendingSorted(m.values[i], m.nCols))
+            return false;
+    }
+
+    return true;
+}
+
+int countNonDescendingRowsMatrices(Matrix *ms, int nMatrix) {
+    int counter = 0;
+
+    for (int i = 0; i < nMatrix; i++)
+        counter += hasAllNonDescendingRows(ms[i]);
+
+    return counter;
+}

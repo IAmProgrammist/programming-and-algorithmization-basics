@@ -388,4 +388,6 @@ bool isUnique(long long *a, int n);
 
 long long getSum(int *a, int n);
 
+bool isNonDescendingSorted(int *a, int n);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_ALG_H
