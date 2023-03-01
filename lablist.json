@@ -25,6 +25,12 @@
       "testsfilename": "tests.json",
       "testsfilepath": "./lab15",
       "enabled": true
+    },{
+      "labid": 16,
+      "labname": "Работа с многомерными массивами",
+      "testsfilename": "tests.json",
+      "testsfilepath": "./lab16",
+      "enabled": true
     }
   ]
 }

@@ -34,7 +34,7 @@ void testSwapColumns() {
     freeMemMatrix(expectedArray);
 }
 
-int getSum(int *array, int arraySize) {
+int getSumInt(int *array, int arraySize) {
     int result = 0;
 
     for (int i = 0; i < arraySize; i++)
@@ -68,7 +68,7 @@ void testInsertionSortRowsMatrixByRowCriteria() {
                                               9, 10, 11, 5, //35
                                               7, 2, 3, 8/*20*/}, 3, 4);
 
-    insertionSortRowsMatrixByRowCriteria(m, getSum);
+    insertionSortRowsMatrixByRowCriteria(m, getSumInt);
 
     Matrix expectedArray = createMatrixFromArray((int[]) {7, 2, 3, 8,
                                                           12, 6, 1, 4,
@@ -106,7 +106,7 @@ void testSelectionSortColsMatrixByColCriteria() {
                                               9, 10, 11, 5,
                                               7, 2, 3, 8}, 3, 4);
 
-    selectionSortColsMatrixByColCriteria(m, getSum);
+    selectionSortColsMatrixByColCriteria(m, getSumInt);
 
     Matrix expectedArray = createMatrixFromArray((int[]) {1, 4, 6, 12,
                                                           11, 5, 10, 9,
