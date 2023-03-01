@@ -390,4 +390,6 @@ long long getSum(int *a, int n);
 
 bool isNonDescendingSorted(int *a, int n);
 
+int intMin2(int a, int b);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_ALG_H

@@ -77,4 +77,8 @@ bool hasAllNonDescendingRows(Matrix m);
 
 int countNonDescendingRowsMatrices(Matrix *ms, int nMatrix);
 
+int countNorm(Matrix m);
+
+void outputMatricesWithMinNorm(Matrix *ms, int nMatrix);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_MATRIX_H

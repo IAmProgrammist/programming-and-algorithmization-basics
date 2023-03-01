@@ -243,7 +243,7 @@ Matrix mulMatrices(Matrix m1, Matrix m2) {
         for (int j = 0; j < m1.nCols; j++) {
             int arrayElement = 0;
 
-            for(int k = 0; k < m1.nCols; k++)
+            for (int k = 0; k < m1.nCols; k++)
                 arrayElement += m1.values[i][k] * m2.values[k][j];
 
             multipliedMatrix.values[i][j] = arrayElement;
@@ -279,4 +279,36 @@ int countNonDescendingRowsMatrices(Matrix *ms, int nMatrix) {
         counter += hasAllNonDescendingRows(ms[i]);
 
     return counter;
+}
+
+int countNorm(Matrix m) {
+    // We can do this since we compare values of matrix by modulus
+    int max = 0;
+
+    for (int i = 0; i < m.nRows; i++)
+        for (int j = 0; j < m.nCols; j++)
+            max = max2(max, abs(m.values[i][j]));
+
+    return max;
+}
+
+void outputMatricesWithMinNorm(Matrix *ms, int nMatrix) {
+    if (nMatrix == 0) return;
+
+    int *keys = (int *) malloc(sizeof(int) * nMatrix);
+    int minKey = countNorm(ms[0]);
+    keys[0] = minKey;
+
+    for (int i = 1; i < nMatrix; i++) {
+        assert(isSquareMatrix(ms[i]));
+
+        keys[i] = countNorm(ms[i]);
+        minKey = intMin2(minKey, keys[i]);
+    }
+
+    for (int i = 0; i < nMatrix; i++)
+        if (keys[i] == minKey)
+            outputMatrix(ms[i]);
+
+    free(keys);
 }

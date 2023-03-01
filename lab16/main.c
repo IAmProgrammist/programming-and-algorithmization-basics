@@ -75,7 +75,7 @@ void testCountNonDescendingRowsMatrices() {
 
     freeMemMatrices(matrices, 4);
 
-    matrices = createArrayOfMatrixFromArray((int[]){7, 3,
+    matrices = createArrayOfMatrixFromArray((int[]){3, 3,
                                                             6, 2,
                                                             42, 2,
 
