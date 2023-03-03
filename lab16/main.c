@@ -114,6 +114,14 @@ void testGetVectorIndexWithMaxAngle() {
                                             0, 0}, 3, 2);
 
     assert(getVectorIndexWithMaxAngle(vectors, vector) == 0);
+
+    freeMemMatrix(vectors);
+
+    vectors = createMatrixFromArray((int[]){}, 0, 2);
+
+    assert(getVectorIndexWithMaxAngle(vectors, vector) == -1);
+
+    freeMemMatrix(vectors);
 }
 
 void test() {
