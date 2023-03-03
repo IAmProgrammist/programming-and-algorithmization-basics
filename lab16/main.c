@@ -96,10 +96,31 @@ void testCountNonDescendingRowsMatrices() {
     freeMemMatrices(matrices, 4);
 }
 
+void testGetVectorIndexWithMaxAngle() {
+    Matrix vectors = createMatrixFromArray((int[]){1, 3,
+                                                            -2, 3,
+                                                            -2, -3,
+                                                            -4,-2, 4, -2,
+                                                            }, 5, 2);
+
+    int vector[2] = {6, 1};
+
+    assert(getVectorIndexWithMaxAngle(vectors, vector) == 3);
+
+    freeMemMatrix(vectors);
+
+    vectors = createMatrixFromArray((int[]){0, 0,
+                                            0, 0,
+                                            0, 0}, 3, 2);
+
+    assert(getVectorIndexWithMaxAngle(vectors, vector) == 0);
+}
+
 void test() {
     testTransposeIfMatrixHasNotEqualSumOfRows();
     testIsMutuallyInverseMatrices();
     testCountNonDescendingRowsMatrices();
+    testGetVectorIndexWithMaxAngle();
 }
 
 int main() {

@@ -81,4 +81,6 @@ int countNorm(Matrix m);
 
 void outputMatricesWithMinNorm(Matrix *ms, int nMatrix);
 
+int getVectorIndexWithMaxAngle(Matrix m, int *b);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_MATRIX_H

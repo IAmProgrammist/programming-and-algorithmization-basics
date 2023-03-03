@@ -392,4 +392,10 @@ bool isNonDescendingSorted(int *a, int n);
 
 int intMin2(int a, int b);
 
+double getScalarProduct(int *a, int *b, int n);
+
+double getVectorLength(int *a, int n);
+
+double getCosine(int *a, int *b, int n);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_ALG_H

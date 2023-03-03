@@ -312,3 +312,22 @@ void outputMatricesWithMinNorm(Matrix *ms, int nMatrix) {
 
     free(keys);
 }
+
+int getVectorIndexWithMaxAngle(Matrix m, int *b) {
+    if (m.nRows == 0) return -1;
+
+    double minCosinus = getCosine(m.values[0], b, m.nCols);
+    int minCosinusIndex = 0;
+
+    for (int i = 1; i < m.nRows; i++) {
+        double currentCos = getCosine(m.values[i], b, m.nCols);
+
+        // More cos - less angle
+        if (currentCos < minCosinus) {
+            minCosinus = currentCos;
+            minCosinusIndex = i;
+        }
+    }
+
+    return minCosinusIndex;
+}
