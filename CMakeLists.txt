@@ -297,3 +297,18 @@ target_link_libraries(15matrix matrix)
 # Sixteenth library
 add_executable(16matrix lab16/main.c)
 target_link_libraries(16matrix matrix)
+
+add_executable(17 ./lab17/main.c)
+
+add_library(str string/string_.h string/string_.c
+        # string/tasks/digitToStartTransform.h
+        # string/tasks/reverseWords.h
+        # string/tasks/replaceDigitsBySpaces.h
+        # ...
+        # < файл с решением задачи для следующей лабораторной >
+        # ...
+        # string/tasks/hasPairOfWordsWithEqualLetterSet.h
+        # string/tasks/printWordsNonEqualLastWord.h
+        )
+
+target_link_libraries(17 str)

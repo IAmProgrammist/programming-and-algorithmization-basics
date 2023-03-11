@@ -31,6 +31,12 @@
       "testsfilename": "tests.json",
       "testsfilepath": "./lab16",
       "enabled": true
+    },{
+      "labid": 17,
+      "labname": "Создание библиотеки для обработки строк",
+      "testsfilename": "tests.json",
+      "testsfilepath": "./lab17",
+      "enabled": true
     }
   ]
 }
