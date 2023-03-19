@@ -9,6 +9,8 @@
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__, __FUNCTION__, __LINE__)
 
+#define MAX_STRING_SIZE 10000
+
 size_t strlen(const char *begin);
 
 char* find(char *begin, char *end, int ch);

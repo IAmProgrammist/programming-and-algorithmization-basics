@@ -14,6 +14,9 @@ add_library(str string/string_.h string/string_.c
          string/tasks/removeNonLetters.c
 
         string/tasks/removeExtraSpaces.c
-        string/tasks/removeExtraSpaces.h)
+        string/tasks/removeExtraSpaces.h
+
+        string/tasks/revertEveryWord.c
+        string/tasks/revertEveryWord.h)
 
 target_link_libraries(18 str)
