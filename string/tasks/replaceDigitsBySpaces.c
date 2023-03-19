@@ -1,6 +1,6 @@
 #include "replaceDigitsBySpaces.h"
 
-char _stringBuffer[MAX_STRING_SIZE + 1];
+static char _stringBuffer[MAX_STRING_SIZE + 1];
 
 void test_replaceDigitsBySpaces() {
     char s1[] = "";
