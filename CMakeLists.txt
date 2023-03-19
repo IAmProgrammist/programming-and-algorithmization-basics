@@ -11,6 +11,9 @@ add_executable(18 main.c)
 
 add_library(str string/string_.h string/string_.c
          string/tasks/removeNonLetters.h
-         string/tasks/removeNonLetters.c)
+         string/tasks/removeNonLetters.c
+
+        string/tasks/removeExtraSpaces.c
+        string/tasks/removeExtraSpaces.h)
 
 target_link_libraries(18 str)
