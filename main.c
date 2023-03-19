@@ -5,6 +5,7 @@
 #include "string/tasks/replace.h"
 #include "string/tasks/isLexicographicalOrder.h"
 #include "string/tasks/printWordsInReversedOrder.h"
+#include "string/tasks/getWordAlternation.h"
 
 int main() {
     test_removeNonLetters();
@@ -15,4 +16,5 @@ int main() {
     test_isLexicographicalOrder();
     printWordsInReversedOrder("A BC   D");
     printWordsInReversedOrder("");
+    test_getWordAlternation();
 }
