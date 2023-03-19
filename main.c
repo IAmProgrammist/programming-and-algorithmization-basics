@@ -4,6 +4,7 @@
 #include "string/tasks/replaceDigitsBySpaces.h"
 #include "string/tasks/replace.h"
 #include "string/tasks/isLexicographicalOrder.h"
+#include "string/tasks/printWordsInReversedOrder.h"
 
 int main() {
     test_removeNonLetters();
@@ -12,4 +13,6 @@ int main() {
     test_replaceDigitsBySpaces();
     test_replace();
     test_isLexicographicalOrder();
+    printWordsInReversedOrder("A BC   D");
+    printWordsInReversedOrder("");
 }
