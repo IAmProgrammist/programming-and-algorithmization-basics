@@ -9,7 +9,9 @@
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__, __FUNCTION__, __LINE__)
 
-#define MAX_STRING_SIZE 10000
+#define MAX_STRING_SIZE 1000
+#define MAX_N_WORDS_IN_STRING 100
+#define MAX_WORD_SIZE 20
 
 size_t strlen(const char *begin);
 
