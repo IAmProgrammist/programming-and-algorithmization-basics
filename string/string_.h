@@ -5,8 +5,12 @@
 #include <ctype.h>
 #include <memory.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
+__FILE__, __FUNCTION__, __LINE__)
+
+#define ASSERT_BOOL(expected, got) assertBool(expected, got, \
 __FILE__, __FUNCTION__, __LINE__)
 
 #define MAX_STRING_SIZE 1000
@@ -37,6 +41,10 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource,
                     char *beginDestination, int (*f)(int));
 
 void assertString(const char *expected, char *got,
+                  char const *fileName, char const *funcName,
+                  int line);
+
+void assertBool(const bool expected, bool got,
                   char const *fileName, char const *funcName,
                   int line);
 

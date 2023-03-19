@@ -12,12 +12,12 @@ int getWord(char *beginSearch, WordDescriptor *word) {
 }
 
 int getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
-    word->end = findNonSpaceReverse(rbegin, rend);
+    word->end = findNonSpaceReverse(rbegin, rend) + 1;
 
-    if (word->end == rend)
+    if (word->end == rend + 1)
         return 0;
 
-    word->begin = findSpaceReverse(word->end, rend);
+    word->begin = findSpaceReverse(word->end, rend) + 1;
 
     return 1;
 }

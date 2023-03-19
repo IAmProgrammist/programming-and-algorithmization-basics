@@ -24,12 +24,16 @@ void test_replace() {
     ASSERT_STRING("I love bee , bee is amazing!", s5);
 }
 
-int strcmpWords(WordDescriptor word, WordDescriptor word1) {
-    char difference;
-    while ((difference = *word.begin - *word1.begin) == 0 && word.begin < word.end && word1.begin < word1.end)
-        word.begin++, word1.begin++;
-
-    return word.begin == word.end && word1.begin == word1.end ? 0 : difference;
+int strcmpWords(WordDescriptor w1, WordDescriptor w2) {
+    while (w1.begin != w1.end &&
+           w2.begin != w2.end &&
+           *w1.begin == *w2.begin) {
+        w1.begin++;
+        w2.begin++;
+    }
+    char endWordChar1 = (isspace(*w1.begin)) ? '\0' : *w1.begin;
+    char endWordChar2 = (isspace(*w2.begin)) ? '\0' : *w2.begin;
+    return endWordChar1 - endWordChar2;
 }
 
 void replace(char *source, char *w1, char *w2) {

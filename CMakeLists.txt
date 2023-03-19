@@ -17,6 +17,6 @@ add_library(str string/string_.h string/string_.c
         string/tasks/removeExtraSpaces.h
 
         string/tasks/revertEveryWord.c
-        string/tasks/revertEveryWord.h string/tasks/replaceDigitsBySpaces.c string/tasks/replaceDigitsBySpaces.h string/tasks/replace.c string/tasks/replace.h)
+        string/tasks/revertEveryWord.h string/tasks/replaceDigitsBySpaces.c string/tasks/replaceDigitsBySpaces.h string/tasks/replace.c string/tasks/replace.h string/tasks/isLexicographicalOrder.c string/tasks/isLexicographicalOrder.h)
 
 target_link_libraries(18 str)

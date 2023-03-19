@@ -94,3 +94,15 @@ void assertString(const char *expected, char *got,
     } else
         fprintf(stderr, "%s - OK\n", funcName);
 }
+
+void assertBool(const bool expected, bool got,
+                  char const *fileName, char const *funcName,
+                  int line) {
+    if (expected != got) {
+        fprintf(stderr, "File %s\n", fileName);
+        fprintf(stderr, "%s - failed on line %d\n", funcName, line);
+        fprintf(stderr, "Expected: %s\n", expected ? "true" : "false");
+        fprintf(stderr, "Got: %s\n\n", got ? "true" : "false");
+    } else
+        fprintf(stderr, "%s - OK\n", funcName);
+}
