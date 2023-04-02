@@ -1,0 +1,12 @@
+#ifndef PROGRAMMING_AND_ALGORITHMIZATION_BASICS_GENERATEORDERED_H
+#define PROGRAMMING_AND_ALGORITHMIZATION_BASICS_GENERATEORDERED_H
+
+#include <stddef.h>
+
+#include "../tester.h"
+
+void generateOrdered(int *a, size_t n);
+
+GeneratingFunc getOrderedGFunc();
+
+#endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_GENERATEORDERED_H

@@ -1,42 +1,6 @@
 {
   "build_dir": "./build_test",
   "labs": [
-    {
-      "labid": 4,
-      "labname": "Циклы. Введение в тестирование",
-      "testsfilename": "tests.json",
-      "testsfilepath": "./lab4",
-      "enabled": true
-    },{
-      "labid": 6,
-      "labname": "Введение в функции",
-      "testsfilename": "tests.json",
-      "testsfilepath": "./lab6",
-      "enabled": true
-    },{
-      "labid": 7,
-      "labname": "Побитовые операции",
-      "testsfilename": "tests.json",
-      "testsfilepath": "./lab7",
-      "enabled": true
-    },{
-      "labid": 15,
-      "labname": "Создание библиотеки для работы с многомерными массивами",
-      "testsfilename": "tests.json",
-      "testsfilepath": "./lab15",
-      "enabled": true
-    },{
-      "labid": 16,
-      "labname": "Работа с многомерными массивами",
-      "testsfilename": "tests.json",
-      "testsfilepath": "./lab16",
-      "enabled": true
-    },{
-      "labid": 17,
-      "labname": "Создание библиотеки для обработки строк",
-      "testsfilename": "tests.json",
-      "testsfilepath": "./lab17",
-      "enabled": true
-    }
+
   ]
 }

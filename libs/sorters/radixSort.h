@@ -1,0 +1,13 @@
+#ifndef PROGRAMMING_AND_ALGORITHMIZATION_BASICS_RADIXSORT_H
+#define PROGRAMMING_AND_ALGORITHMIZATION_BASICS_RADIXSORT_H
+
+#include <stddef.h>
+#include <string.h>
+
+#include "../tester.h"
+
+#define BLOCK_SIZE 8
+
+SortFunc getRadixSFunc();
+
+#endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_RADIXSORT_H
