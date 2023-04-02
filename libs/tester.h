@@ -10,11 +10,21 @@
 #define END_ARRAY_SIZE 100000
 #define STEP_ARRAY_SIZE 10000
 
+#define COUNT_COMPARES 1
+
+#if COUNT_COMPARES == 0
 typedef struct SortFunc {
     void (*sort)(int *a, size_t n);
 
     char name[64];
 } SortFunc;
+#else
+typedef struct SortFunc {
+    unsigned long long (*sort)(int *a, size_t n);
+
+    char name[64];
+} SortFunc;
+#endif
 
 typedef struct GeneratingFunc {
     void (*generate)(int *a, size_t n);
@@ -38,6 +48,14 @@ typedef struct GeneratingFunc {
 #define TIME_TEST(testCode, time) { \
     clock_t start_time = clock(); \
     testCode \
+clock_t end_time = clock();\
+clock_t sort_time = end_time - start_time; \
+time = (double) sort_time / CLOCKS_PER_SEC; \
+}
+
+#define TIME_COMPARES_TEST(testCode, time, compares) { \
+    clock_t start_time = clock(); \
+    compares = testCode \
 clock_t end_time = clock();\
 clock_t sort_time = end_time - start_time; \
 time = (double) sort_time / CLOCKS_PER_SEC; \
