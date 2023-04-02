@@ -7,7 +7,7 @@ static void sort(int *a, size_t n) {
 
         size_t j = i;
         while (j > 0 && a[j - 1] > currentElement) {
-            swap(a + j, a + j - 1);
+            a[j] = a[j - 1];
             j--;
         }
 
@@ -23,7 +23,7 @@ static unsigned long long sort(int *a, size_t n) {
 
         size_t j = i;
         while (++compares && j > 0 && ++compares && a[j - 1] > currentElement) {
-            swap(a + j, a + j - 1);
+            a[j] = a[j - 1];
             j--;
         }
 

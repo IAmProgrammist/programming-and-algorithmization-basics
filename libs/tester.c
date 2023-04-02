@@ -72,7 +72,7 @@ void checkTimeAndCompares(unsigned long long(*sortFunc)(int *, size_t),
             printf("FileOpenError %s", filename);
             exit(1);
         }
-        fprintf(f, "%zu; %.3f; %llu\n", size, time, compares);
+        fprintf(f, "%zu; %llu\n", size, compares);
         fclose(f);
     } else {
         printf("Wrong!\n");
@@ -89,9 +89,9 @@ void timeExperiment() {
             getBubbleSFunc(),
             getSelectionSFunc(),
             getInsertionSFunc(),
-            //getCombSFunc(),
-            //getShellSFunc(),
-            //getRadixSFunc()
+            getCombSFunc(),
+            getShellSFunc(),
+            getRadixSFunc()
     };
     const unsigned FUNCS_N = ARRAY_SIZE(sorts);
     // описание функций генерации
