@@ -106,7 +106,7 @@ void test() {
 
 int main() {
     test();
-    VectorVoid vector = {};
+    VectorVoid vector = createVectorV(5, 8);
 
     return 0;
 }
