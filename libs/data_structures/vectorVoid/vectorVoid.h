@@ -5,6 +5,8 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
 
 #define min(a, b) (a) < (b) ? (a) : (b)
 #define max(a, b) (a) > (b) ? (a) : (b)
@@ -25,5 +27,17 @@ void shrinkToFitV(VectorVoid *v);
 void clearV(VectorVoid *v);
 
 void deleteVectorV(VectorVoid *v);
+
+bool isEmptyV(VectorVoid *v);
+
+bool isFullV(VectorVoid *v);
+
+void getVectorValueV(VectorVoid *v, size_t index, void *destination);
+
+void setVectorValueV(VectorVoid *v, size_t index, void *source);
+
+void popBackV(VectorVoid *v);
+
+void pushBackV(VectorVoid *v, void *source);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_VECTORVOID_H
