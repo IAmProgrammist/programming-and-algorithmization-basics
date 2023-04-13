@@ -35,4 +35,10 @@ void pushBack(Vector *v, int x);
 
 void popBack(Vector *v);
 
+int* atVector(Vector *v, size_t index);
+
+int* back(Vector *v);
+
+int* front(Vector *v);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_VECTOR_H
