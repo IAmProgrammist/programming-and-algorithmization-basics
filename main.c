@@ -6,7 +6,7 @@ void test_pushBack_emptyVector() {
     Vector r = createVector(0);
 
     pushBack(&r, 42);
-    assert(r.data[0] == 42 && r.size == 1 && r.capacity == 1);
+    assert(getVectorValue(&r, 0) == 42 && r.size == 1 && r.capacity == 1);
 }
 
 void test_pushBack_fullVector() {
@@ -20,26 +20,26 @@ void test_pushBack_fullVector() {
     pushBack(&r, 42);
 
 
-    assert(r.data[3] == 42 && r.size == 4 && r.capacity == 6);
+    assert(getVectorValue(&r, 3) == 42 && r.size == 4 && r.capacity == 6);
 
     deleteVector(&r);
 
     r = createVector(0);
 
     pushBack(&r, 1);
-    assert(r.data[0] == 1 && r.size == 1 && r.capacity == 1);
+    assert(getVectorValue(&r, 0) == 1 && r.size == 1 && r.capacity == 1);
 
     pushBack(&r, 6);
-    assert(r.data[1] == 6 && r.size == 2 && r.capacity == 2);
+    assert(getVectorValue(&r, 1) == 6 && r.size == 2 && r.capacity == 2);
 
     pushBack(&r, 5);
-    assert(r.data[2] == 5 && r.size == 3 && r.capacity == 4);
+    assert(getVectorValue(&r, 2) == 5 && r.size == 3 && r.capacity == 4);
 
     pushBack(&r, 7);
-    assert(r.data[3] == 7 && r.size == 4 && r.capacity == 4);
+    assert(getVectorValue(&r, 3) == 7 && r.size == 4 && r.capacity == 4);
 
     pushBack(&r, 42);
-    assert(r.data[4] == 42 && r.size == 5 && r.capacity == 8);
+    assert(getVectorValue(&r, 4) == 42 && r.size == 5 && r.capacity == 8);
 }
 
 void test_atVector_notEmptyVector() {

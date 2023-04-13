@@ -6,13 +6,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define min(a, b) a < b ? a : b
-#define max(a, b) a > b ? a : b
+#define min(a, b) (a) < (b) ? (a) : (b)
+#define max(a, b) (a) > (b) ? (a) : (b)
 
 typedef struct Vector {
-    int *data; // указатель на элементы вектора
-    size_t size; // размер вектора
-    size_t capacity; // вместимость вектора
+    int *data;
+    size_t size;
+    size_t capacity;
 } Vector;
 
 Vector createVector(size_t n);

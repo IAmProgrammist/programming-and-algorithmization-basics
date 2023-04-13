@@ -29,7 +29,7 @@ void clear(Vector *v) {
 }
 
 void shrinkToFit(Vector *v) {
-    *v = (Vector) {realloc(v->data, (v->size) * sizeof(int)), v->size, v->size};
+    reserve(v, v->size);
 }
 
 void deleteVector(Vector *v) {
@@ -49,14 +49,14 @@ int getVectorValue(Vector *v, size_t i) {
 }
 
 void pushBack(Vector *v, int x) {
-    if (v->size + 1 > v->capacity)
+    if (isFull(v))
         reserve(v, max(1, v->capacity * 2));
 
     v->data[v->size++] = x;
 }
 
 void popBack(Vector *v) {
-    if (v->size == 0) {
+    if (isEmpty(v)) {
         fprintf(stderr, "can't pop element from an empty array");
         exit(1);
     }
@@ -67,8 +67,10 @@ void popBack(Vector *v) {
 int* atVector(Vector *v, size_t index) {
     if (index < v->size)
         return v->data + index;
-    else
-        fprintf(stderr, "IndexError: a[%zu] is not exists", index);
+
+    fprintf(stderr, "IndexError: a[%zu] is not exists", index);
+
+    return NULL;
 }
 
 int* back(Vector *v) {
