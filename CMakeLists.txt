@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(programming_and_algorithmization_basics C)
+project(programming_and_algorithmization_basics C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -312,3 +312,25 @@ add_library(str string/string_.h string/string_.c
         )
 
 target_link_libraries(17 str)
+
+# Twelfth lab
+add_executable(lab20_experiment_1 ./lab20/task1/main.cpp)
+add_executable(1635A ./lab20/task1/1635A.cpp)
+add_executable(lab20_experiment_2 ./lab20/task2/main.cpp)
+add_executable(lab20_experiment_3 ./lab20/task3/main.cpp)
+add_executable(lab20_experiment_4 ./lab20/task4/main.cpp)
+add_executable(lab20_experiment_7 ./lab20/task7/main.cpp)
+
+# Twenty first lab
+add_executable(lab20_taska ./lab21/taska.cpp)
+add_executable(lab20_taskb ./lab21/taskb.cpp)
+add_executable(lab20_taskc ./lab21/taskc.cpp)
+add_executable(lab20_taskd ./lab21/taskd.cpp)
+add_executable(lab20_taske ./lab21/taske.cpp)
+add_executable(lab20_taskf ./lab21/taskf.cpp)
+add_executable(lab20_taskg ./lab21/taskg.cpp)
+add_executable(lab20_taskh ./lab21/taskh.cpp)
+add_executable(lab20_taski ./lab21/taski.cpp)
+add_executable(lab20_taskj ./lab21/taskj.cpp)
+add_executable(lab20_taskk ./lab21/taskk.cpp)
+add_executable(lab20_taskl ./lab21/taskl.cpp)
