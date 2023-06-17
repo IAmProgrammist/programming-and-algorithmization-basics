@@ -18,7 +18,7 @@ process_labs() {
   mkdir -p ${BUILD_DIR}
 
   echo -e "Сборка CMake..."
-  # TODO: В текущем варианте требуется добавлять некоторые значения в CMakeLists.txt, надо починить.
+  # TODO: В текущем варианте требуется добавлять некоторые значения в CMakeLists.txt.txt, надо починить.
   cmake -DCMAKE_BUILD_TYPE=Debug ninja -G Ninja -S. -B ${BUILD_DIR}
 
   echo -e "${TOTAL_LABS} ${BUILD_DIR}"
