@@ -33,6 +33,7 @@ void RunAllTests(void) {
     CuSuite* suite = CuSuiteNew();
 
     CuSuiteAddSuite(suite, Task1GetSuite());
+    CuSuiteAddSuite(suite, Task2GetSuite());
     // TODO: add more tests
 
     CuSuiteRun(suite);

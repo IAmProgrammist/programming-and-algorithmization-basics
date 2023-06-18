@@ -12,7 +12,7 @@ int isEqual(float a, float b) {
     return fabs(b - a) < EPS;
 }
 
-#define rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2) {\
+#define ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2) {\
     char buf[MESSAGE_SIZE];\
     snprintf(buf, MESSAGE_SIZE * sizeof(buf[0]),\
              "For a = %.4G, b = %.4G, c = %.4G decision should be x1 = %.4G and x2 = %.4G. Actual are x1 = %.4G and x2 = %.4G",\
@@ -31,7 +31,7 @@ void testTask1APositivePositiveIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositivePositiveRealRoots(CuTest *tc) {
@@ -44,7 +44,7 @@ void testTask1APositivePositiveRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositivePositiveAndNegativeIntRoots(CuTest *tc) {
@@ -57,7 +57,7 @@ void testTask1APositivePositiveAndNegativeIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositivePositiveAndNegativeRealRoots(CuTest *tc) {
@@ -70,7 +70,7 @@ void testTask1APositivePositiveAndNegativeRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositiveZeroAndNegativeIntRoots(CuTest *tc) {
@@ -83,7 +83,7 @@ void testTask1APositiveZeroAndNegativeIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositiveZeroAndNegativeRealRoots(CuTest *tc) {
@@ -96,7 +96,7 @@ void testTask1APositiveZeroAndNegativeRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositivePositiveAndZeroIntRoots(CuTest *tc) {
@@ -109,7 +109,7 @@ void testTask1APositivePositiveAndZeroIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositivePositiveAndZeroRealRoots(CuTest *tc) {
@@ -122,7 +122,7 @@ void testTask1APositivePositiveAndZeroRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositiveNegativeIntRoots(CuTest *tc) {
@@ -135,7 +135,7 @@ void testTask1APositiveNegativeIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1APositiveNegativeRealRoots(CuTest *tc) {
@@ -148,7 +148,7 @@ void testTask1APositiveNegativeRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativeNegativeIntRoots(CuTest *tc) {
@@ -161,7 +161,7 @@ void testTask1ANegativeNegativeIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativeNegativeRealRoots(CuTest *tc) {
@@ -174,7 +174,7 @@ void testTask1ANegativeNegativeRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativePositiveAndNegativeIntRoots(CuTest *tc) {
@@ -187,7 +187,7 @@ void testTask1ANegativePositiveAndNegativeIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativePositiveAndNegativeRealRoots(CuTest *tc) {
@@ -200,7 +200,7 @@ void testTask1ANegativePositiveAndNegativeRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativeZeroAndNegativeIntRoots(CuTest *tc) {
@@ -213,7 +213,7 @@ void testTask1ANegativeZeroAndNegativeIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativeZeroAndNegativeRealRoots(CuTest *tc) {
@@ -226,7 +226,7 @@ void testTask1ANegativeZeroAndNegativeRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativePositiveAndZeroIntRoots(CuTest *tc) {
@@ -239,7 +239,7 @@ void testTask1ANegativePositiveAndZeroIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativePositiveAndZeroRealRoots(CuTest *tc) {
@@ -252,7 +252,7 @@ void testTask1ANegativePositiveAndZeroRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativePositiveIntRoots(CuTest *tc) {
@@ -265,7 +265,7 @@ void testTask1ANegativePositiveIntRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 void testTask1ANegativePositiveRealRoots(CuTest *tc) {
@@ -278,7 +278,7 @@ void testTask1ANegativePositiveRealRoots(CuTest *tc) {
     float actualX1, actualX2;
     solveSquareEquation(a, b, c, &actualX1, &actualX2);
 
-    rootsAssert(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
+    ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2);
 }
 
 CuSuite *Task1GetSuite() {
@@ -312,5 +312,6 @@ CuSuite *Task1GetSuite() {
 
     SUITE_ADD_TEST(suite, testTask1ANegativeNegativeIntRoots);
     SUITE_ADD_TEST(suite, testTask1ANegativeNegativeRealRoots);
+
     return suite;
 }
