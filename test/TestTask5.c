@@ -47,7 +47,7 @@ void testTask4FindSurvivorOneRegularScenario(CuTest* tc) {
     CuAssertIntEquals(tc, josephProblemFindMForSurvivorOne(n), 8);
 }
 
-CuSuite *Task4GetSuite() {
+CuSuite *Task5GetSuite() {
     CuSuite *suite = CuSuiteNew();
 
     SUITE_ADD_TEST(suite, testTask4FindSurvivorRegularScenario);

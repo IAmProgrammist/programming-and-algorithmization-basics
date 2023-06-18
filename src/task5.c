@@ -58,6 +58,5 @@ int josephProblemFindMForSurvivorOne(int n) {
         if (josephProblemFindSurvivor(n, i) == 1)
             m = i;
 
-
     return m;
 }
