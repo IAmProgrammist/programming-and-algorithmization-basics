@@ -43,4 +43,6 @@ typedef struct MatrixIndex {
 void findLongestZeroLineInMatrix(bool **matrix, int n, int k, MatrixIndex *longestZeroSubsequenceBegin,
                                  MatrixIndex *longestZeroSubsequenceEnd, int *maxSubsequenceSize);
 
+void sum(unsigned int **numbers, int m, int n, int q, unsigned int *ans);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_TASKS_H
