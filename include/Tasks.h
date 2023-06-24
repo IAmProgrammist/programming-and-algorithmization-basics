@@ -35,6 +35,12 @@ int josephProblemFindMForSurvivorOne(int n);
 // Найти среднее арифметическое элементов каждой строки матрицы Q(l, m) и вычесть его из элементов этой строки.
 void subtractMiddleOfLineFromEveryLine(double **matrix, int l, int m);
 
-void findLongestZeroLineInMatrix(bool **matrix, int n, int k);
+typedef struct MatrixIndex {
+    int row;
+    int column;
+} MatrixIndex;
+
+void findLongestZeroLineInMatrix(bool **matrix, int n, int k, MatrixIndex *longestZeroSubsequenceBegin,
+                                 MatrixIndex *longestZeroSubsequenceEnd, int *maxSubsequenceSize);
 
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_TASKS_H
