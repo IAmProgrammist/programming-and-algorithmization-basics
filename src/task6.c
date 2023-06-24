@@ -31,19 +31,19 @@ static void getLine(bool **matrix, int k, int lineIndex, bool *line) {
         line[j] = matrix[lineIndex][j];
 }
 
-static void getColumn(bool **matrix, int n, int columnIndex, bool *line) {
+static void getColumn(bool **matrix, int n, int columnIndex, bool *column) {
     for (int j = 0; j < n; j++)
-        line[j] = matrix[j][columnIndex];
+        column[j] = matrix[j][columnIndex];
 }
 
-static void getDiagonalTopLeftToBottomRight(bool **matrix, int n, int k, int iStart, int jStart, bool *line, int *lineSize) {
+static void getDiagonalTopLeftToBottomRight(bool **matrix, int n, int k, int iStart, int jStart, bool *diagonal, int *diagonalSize) {
     for (int i = iStart, j = jStart; i < n && j < k; i++, j++)
-        line[(*lineSize)++] = matrix[i][j];
+        diagonal[(*diagonalSize)++] = matrix[i][j];
 }
 
-static void getDiagonalTopRightToBottomLeft(bool **matrix, int n, int k, int iStart, int jStart, bool *line, int *lineSize) {
+static void getDiagonalTopRightToBottomLeft(bool **matrix, int n, int k, int iStart, int jStart, bool *diagonal, int *diagonalSize) {
     for (int i = iStart, j = jStart; i < n && j >= 0; i++, j--)
-        line[(*lineSize)++] = matrix[i][j];
+        diagonal[(*diagonalSize)++] = matrix[i][j];
 }
 
 static void processLine(bool **matrix, int k, int lineIndex, MatrixIndex *longestZeroSubsequenceBegin,
@@ -110,9 +110,13 @@ static void processDiagonalTopRightToBottomLeft(bool **matrix, int n, int k, int
     }
 }
 
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
 void findLongestZeroLineInMatrix(bool **matrix, int n, int k, MatrixIndex *longestZeroSubsequenceBegin,
                                  MatrixIndex *longestZeroSubsequenceEnd, int *maxSubsequenceSize) {
-    bool *buf = malloc(sizeof(bool) * n * k);
+    bool *buf = malloc(sizeof(bool) * max(n, k));
     *maxSubsequenceSize = 0;
     *longestZeroSubsequenceBegin = (MatrixIndex) {0, 0};
     *longestZeroSubsequenceEnd = (MatrixIndex) {0, 0};
