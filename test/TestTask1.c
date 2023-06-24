@@ -13,6 +13,7 @@ int isEqual(float a, float b) {
 }
 
 #define ROOTS_ASSERT(tc, a, b, c, expectedX1, expectedX2, actualX1, actualX2) {\
+    printf("%f %f %f %.6f&%.6f\n", a, b, c, isEqual(actualX1, expectedX1) ? actualX1 : actualX2, isEqual(actualX2, expectedX2) ? actualX2 : actualX1);                                                                           \
     char buf[MESSAGE_SIZE];\
     snprintf(buf, MESSAGE_SIZE * sizeof(buf[0]),\
              "For a = %.4G, b = %.4G, c = %.4G decision should be x1 = %.4G and x2 = %.4G. Actual are x1 = %.4G and x2 = %.4G",\

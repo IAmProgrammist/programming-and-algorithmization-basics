@@ -35,6 +35,7 @@ void RunAllTests(void) {
     CuSuiteAddSuite(suite, Task1GetSuite());
     CuSuiteAddSuite(suite, Task2GetSuite());
     CuSuiteAddSuite(suite, Task3GetSuite());
+    CuSuiteAddSuite(suite, Task4GetSuite());
     CuSuiteAddSuite(suite, Task5GetSuite());
 
     CuSuiteRun(suite);

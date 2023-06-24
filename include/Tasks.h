@@ -32,4 +32,9 @@ int josephProblemFindSurvivor(int n, int m);
 // только один человек. Найти такое m > 1, при котором «в живых» останется первый.
 int josephProblemFindMForSurvivorOne(int n);
 
+// Найти среднее арифметическое элементов каждой строки матрицы Q(l, m) и вычесть его из элементов этой строки.
+void subtractMiddleOfLineFromEveryLine(double **matrix, int l, int m);
+
+void findLongestZeroLineInMatrix(bool **matrix, int n, int k);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_TASKS_H
