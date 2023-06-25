@@ -45,4 +45,11 @@ void findLongestZeroLineInMatrix(bool **matrix, int n, int k, MatrixIndex *longe
 
 void sum(unsigned int **numbers, int m, int n, int q, unsigned int *ans);
 
+typedef struct Point {
+    double x;
+    double y;
+} Point;
+
+double getArea(Point *points, int pointsAmount);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_TASKS_H
