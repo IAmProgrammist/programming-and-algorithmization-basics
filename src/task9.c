@@ -3,7 +3,7 @@ void findX(double *matrixA, int n, double **matrixB, double **matrixX) {
     Здесь верхнетреугольная матрица matrixA
 
                {1, -2, 0}
-     matrixA = {0, 4, 15} -> {1, -2, 0, 4, 17, 1}
+     matrixA = {0, 4, 17} -> {1, -2, 0, 4, 17, 1}
                {0, 0, 1}
 
      */
