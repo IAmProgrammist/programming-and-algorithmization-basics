@@ -52,4 +52,6 @@ typedef struct Point {
 
 double getArea(Point *points, int pointsAmount);
 
+void findX(double *matrixA, int n, double **matrixB, double **matrixX);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_TASKS_H
