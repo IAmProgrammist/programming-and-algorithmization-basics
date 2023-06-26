@@ -89,6 +89,8 @@ double nums[4][4] = {
  */
 
 int main(void) {
+    system("chcp 65001");
+
     int size;
     scanf("%d", &size);
 

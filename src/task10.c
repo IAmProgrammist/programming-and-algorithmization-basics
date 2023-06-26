@@ -1,12 +1,16 @@
 #include <stdlib.h>
+#include <stdint.h>
+#include <stdio.h>
 
 #include "Tasks.h"
 
+// beg содержит ссылку на русский символ в кодировке UTF-8
 static uint16_t getRuCode(uint8_t *beg) {
     // Русский символ в UTF-8 состоит из двух байтов, поэтому сохраняем результат в двухбайтовый беззнаковый тип.
     return (((uint16_t) beg[0]) << 8) + ((uint16_t) beg[1]);
 }
 
+// beg содержит ссылку на русский символ в кодировке UTF-8
 static void writeRuCodeToChar(uint16_t code, char *beg) {
     // Русский символ в UTF-8 состоит из двух байтов, поэтому просто копируем их
     beg[0] = (code & 0xFF00) >> 8;
@@ -87,10 +91,48 @@ static int fullNameComparator(const void *a, const void *b) {
 
 // Так как кодировка в задании не была уточнена, реализовал алгоритм для кодировки UTF-8.
 // получилось "самую капельку" сложнее, зато интереснее.
-// Ну и я работаю под UNIX-системой, там UTF-8 по умолчанию.
 void sortBySurname(FullName *namesList, int size) {
     for (int i = 0; i < size; i++)
         validateFullName(namesList[i]);
 
     qsort(namesList, size, sizeof(FullName), fullNameComparator);
+}
+
+// Пример использования
+int main() {
+    // Кодировка консоли UTF-8
+    system("chcp 65001");
+
+    // Файл в кодировке UTF-8, поэтому ФИО ниже таакже создаются в UTF-8, значит сортировка будет работать.
+
+    char name1[] = "фадей";
+    char name2[] = "инесса";
+    char name3[] = "белла";
+    char name4[] = "ибрагим";
+    char name5[] = "степан";
+
+    char sname1[] = "трифонов";
+    char sname2[] = "филатова";
+    char sname3[] = "пестова";
+    char sname4[] = "богданов";
+    char sname5[] = "ё";
+
+    char pname1[] = "витальевич";
+    char pname2[] = "фомовна";
+    char pname3[] = "даниловна";
+    char pname4[] = "романович";
+    char pname5[] = "игнатович";
+
+    FullName fNames[] = {
+            {name1, sname1, pname1},
+            {name2, sname2, pname2},
+            {name3, sname3, pname3},
+            {name4, sname4, pname4},
+            {name5, sname5, pname5}
+    };
+
+    sortBySurname(fNames, 5);
+
+    for (int i = 0; i < 5; i++)
+        printf("%s %s %s\n", fNames[i].surname.name, fNames[i].name.name, fNames[i].patronymic.name);
 }

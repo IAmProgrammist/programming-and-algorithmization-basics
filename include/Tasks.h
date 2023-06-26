@@ -64,8 +64,6 @@ typedef struct FullName {
     ProperName patronymic;    // Отчество
 } FullName;
 
-void ruToupper(unsigned char *beg);
-
 void validateProperName(ProperName name);
 
 void validateFullName(FullName fullName);
