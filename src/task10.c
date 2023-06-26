@@ -1,0 +1,96 @@
+#include <stdlib.h>
+
+#include "Tasks.h"
+
+static uint16_t getRuCode(uint8_t *beg) {
+    // Русский символ в UTF-8 состоит из двух байтов, поэтому сохраняем результат в двухбайтовый беззнаковый тип.
+    return (((uint16_t) beg[0]) << 8) + ((uint16_t) beg[1]);
+}
+
+static void writeRuCodeToChar(uint16_t code, char *beg) {
+    // Русский символ в UTF-8 состоит из двух байтов, поэтому просто копируем их
+    beg[0] = (code & 0xFF00) >> 8;
+    beg[1] = code & 0x00FF;
+}
+
+static void firstLetterToupperRu(char *beg) {
+    uint16_t code = getRuCode(beg);
+
+    // Отдельная проверка для ё, потому что она совсем в другом месте в таблице UTF-8
+    if (code == getRuCode("ё"))
+        writeRuCodeToChar(getRuCode("Ë"), beg);
+    // Проверка для а-п, их коды: 0xD0B0 - 0xD0BF
+    else if (code >= getRuCode("а") && code <= getRuCode("п"))
+        writeRuCodeToChar(code - (getRuCode("а") - getRuCode("А")), beg);
+    // Почему-то между п и р большой пробел, причём только для прописных букв.
+    // Поэтому выполняем отдельную проверку для них. Границы р-я: 0xD1080 - 0xD18F
+    else if (code >= getRuCode("р") && code <= getRuCode("я"))
+        writeRuCodeToChar(code - (getRuCode("р") - getRuCode("Р")), beg);
+}
+
+void validateProperName(ProperName name) {
+    // Делаем первый символ имени заглавным
+    firstLetterToupperRu(name.name);
+}
+
+void validateFullName(FullName fullName) {
+    // Проверяем имя, фамилию и отчество на валидность
+    validateProperName(fullName.name);
+    validateProperName(fullName.surname);
+    validateProperName(fullName.patronymic);
+}
+
+// Приоритет русских символов
+int getRuPriority(char *a) {
+    // Если хоть один из символов ноль-символ - возвращаем 0. Для удобства работы с аналогом strcmp.
+    if (!*a || !a[1]) return 0;
+
+    // Получаем код символа
+    uint16_t aCode = getRuCode(a);
+
+    if (aCode >= getRuCode("А") && aCode <= getRuCode("Е"))
+        return aCode - getRuCode("А") + 1;
+    else if (aCode == getRuCode("Ë"))
+        return 7;
+    else if (aCode >= getRuCode("Ж") && aCode <= getRuCode("Я"))
+        return aCode - getRuCode("Ж") + 8;
+    else if (aCode >= getRuCode("а") && aCode <= getRuCode("е"))
+        return aCode - getRuCode("а") + 34;
+    else if (aCode == getRuCode("ё"))
+        return 40;
+    else if (aCode >= getRuCode("ж") && aCode <= getRuCode("п"))
+        return aCode - getRuCode("ж") + 41;
+    else if (aCode >= getRuCode("р") && aCode <= getRuCode("я"))
+        return aCode - getRuCode("р") + 51;
+
+    // Если получить приоритет не удалось - ставим символ в самую последнюю очередь.
+    return 67;
+}
+
+// Замена strcmp, но для русских символов в UTF-8
+static int fullNameComparator(const void *a, const void *b) {
+    unsigned char* aNameSurname = (*(FullName *) a).surname.name;
+    unsigned char* bNameSurname = (*(FullName *) b).surname.name;
+
+    int aNameCode = getRuPriority(aNameSurname);
+    int bNameCode = getRuPriority(bNameSurname);
+    while (aNameCode && bNameCode && aNameCode == bNameCode) {
+        aNameSurname++;
+        bNameSurname++;
+
+        aNameCode = getRuPriority(aNameSurname);
+        bNameCode = getRuPriority(bNameSurname);
+    }
+
+    return aNameCode - bNameCode;
+}
+
+// Так как кодировка в задании не была уточнена, реализовал алгоритм для кодировки UTF-8.
+// получилось "самую капельку" сложнее, зато интереснее.
+// Ну и я работаю под UNIX-системой, там UTF-8 по умолчанию.
+void sortBySurname(FullName *namesList, int size) {
+    for (int i = 0; i < size; i++)
+        validateFullName(namesList[i]);
+
+    qsort(namesList, size, sizeof(FullName), fullNameComparator);
+}

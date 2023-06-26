@@ -88,32 +88,33 @@ double nums[4][4] = {
     findX(ans, 4, numsn, numsn2);
  */
 
-
 int main(void) {
-    double nums[3][3] = {
-            {6, -876, 6},
-            {204, 1878, -2074},
-            {12, 6, -122},
-    };
+    int size;
+    scanf("%d", &size);
 
-    double **numsn = malloc(sizeof(double*) * 3);
+    FullName *fNameArray = malloc(sizeof(FullName) * size);
 
-    for (int i = 0; i < 3; i++) {
-        numsn[i] = malloc(sizeof(double) * 3);
+    for (int i = 0; i < size; i++) {
+        char *sName = malloc(100 * sizeof(char));
+        char *name = malloc(100 * sizeof(char));
+        char *pName = malloc(100 * sizeof(char));
 
-        for (int j = 0; j < 3; j++)
-            numsn[i][j] = nums[i][j];
+        scanf("%s %s %s", sName, name, pName);
+
+        fNameArray[i] = (FullName) {name, sName, pName};
     }
 
-    double **numsn2 = malloc(sizeof(double*) * 3);
+    sortBySurname(fNameArray, size);
 
-    for (int i = 0; i < 3; i++) {
-        numsn2[i] = malloc(sizeof(double) * 3);
+    for (int i = 0; i < size; i++) {
+        printf("%s %s %s\n", fNameArray[i].surname.name, fNameArray[i].name.name, fNameArray[i].patronymic.name);
+
+        free(fNameArray[i].surname.name);
+        free(fNameArray[i].name.name);
+        free(fNameArray[i].patronymic.name);
     }
 
-    double ans[6] = {1, -2, 0, 4, 17, 1};
-
-    findX(ans, 3, numsn, numsn2);
+    free(fNameArray);
 
     RunAllTests();
 }

@@ -54,4 +54,22 @@ double getArea(Point *points, int pointsAmount);
 
 void findX(double *matrixA, int n, double **matrixB, double **matrixX);
 
+typedef struct ProperName {
+    char *name;               // Ссылка на строку с именем собственным
+} ProperName;
+
+typedef struct FullName {
+    ProperName name;          // Имя
+    ProperName surname;       // Фамилия
+    ProperName patronymic;    // Отчество
+} FullName;
+
+void ruToupper(unsigned char *beg);
+
+void validateProperName(ProperName name);
+
+void validateFullName(FullName fullName);
+
+void sortBySurname(FullName *namesList, int size);
+
 #endif //PROGRAMMING_AND_ALGORITHMIZATION_BASICS_TASKS_H
