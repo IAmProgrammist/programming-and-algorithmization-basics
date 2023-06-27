@@ -15,4 +15,6 @@ int main() {
     ASSERT_INT(size, 2);
 
     ASSERT_MINDEX(((MatrixIndex){0, 1}), ((MatrixIndex){1, 2}), (beg), (end));
+
+    freeMemMatrix(mt);
 }

@@ -9,4 +9,6 @@ int main() {
     findLongestZeroLineInMatrix(mt.values, mt.nRows, mt.nCols, &beg, &end, &size);
 
     ASSERT_INT(size, 0);
+
+    freeMemMatrix(mt);
 }

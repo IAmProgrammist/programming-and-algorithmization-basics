@@ -1,0 +1,13 @@
+add_executable(task9_test1 test1.c)
+target_link_libraries(task9_test1 practice)
+add_executable(task9_test2 test2.c)
+target_link_libraries(task9_test2 practice)
+add_executable(task9_test3 test3.c)
+target_link_libraries(task9_test3 practice)
+add_executable(task9_test4 test4.c)
+target_link_libraries(task9_test4 practice)
+
+add_test(NAME testTask9ZeroSize COMMAND task9_test1)
+add_test(NAME testTask9OneSize COMMAND task9_test2)
+add_test(NAME testTask9ThreeSize COMMAND task9_test3)
+add_test(NAME testTask9FourSize COMMAND task9_test4)
