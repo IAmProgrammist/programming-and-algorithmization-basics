@@ -1,0 +1,13 @@
+add_executable(task4_test1 test1.c)
+target_link_libraries(task4_test1 practice)
+add_executable(task4_test2 test2.c)
+target_link_libraries(task4_test2 practice)
+add_executable(task4_test3 test3.c)
+target_link_libraries(task4_test3 practice)
+add_executable(task4_test4 test4.c)
+target_link_libraries(task4_test4 practice)
+
+add_test(NAME testTask4Empty COMMAND task4_test1)
+add_test(NAME testTask4OneLine COMMAND task4_test2)
+add_test(NAME testTask4OneColumn COMMAND task4_test3)
+add_test(NAME testTask4Regular COMMAND task4_test4)
