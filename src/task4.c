@@ -1,5 +1,3 @@
-#include <stddef.h>
-
 #include "Tasks.h"
 
 void subtractMiddleOfLineFromEveryLine(double **matrix, int l, int m) {
