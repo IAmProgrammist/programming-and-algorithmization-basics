@@ -5,19 +5,19 @@
 #include "Tasks.h"
 
 // beg содержит ссылку на русский символ в кодировке UTF-8
-static uint16_t getRuCode(char *beg) {
+static uint16_t getRuCode(unsigned char *beg) {
     // Русский символ в UTF-8 состоит из двух байтов, поэтому сохраняем результат в двухбайтовый беззнаковый тип.
     return (((uint16_t) beg[0]) << 8) + ((uint16_t) beg[1]);
 }
 
 // beg содержит ссылку на русский символ в кодировке UTF-8
-static void writeRuCodeToChar(uint16_t code, char *beg) {
+static void writeRuCodeToChar(uint16_t code, unsigned char *beg) {
     // Русский символ в UTF-8 состоит из двух байтов, поэтому просто копируем их
     beg[0] = (code & 0xFF00) >> 8;
     beg[1] = code & 0x00FF;
 }
 
-static void firstLetterToupperRu(char *beg) {
+static void firstLetterToupperRu(unsigned char *beg) {
     uint16_t code = getRuCode(beg);
 
     // Отдельная проверка для ё, потому что она совсем в другом месте в таблице UTF-8
@@ -45,12 +45,12 @@ void validateFullName(FullName fullName) {
 }
 
 // Приоритет русских символов
-int getRuPriority(char *a) {
+int getRuPriority(unsigned char *a) {
     // Если хоть один из символов ноль-символ - возвращаем 0. Для удобства работы с аналогом strcmp.
     if (!*a || !a[1]) return 0;
 
     // Получаем код символа
-    uint16_t aCode = getRuCode(a);
+    int aCode = getRuCode(a);
 
     if (aCode >= getRuCode("А") && aCode <= getRuCode("Е"))
         return aCode - getRuCode("А") + 1;
@@ -96,43 +96,4 @@ void sortBySurname(FullName *namesList, int size) {
         validateFullName(namesList[i]);
 
     qsort(namesList, size, sizeof(FullName), fullNameComparator);
-}
-
-// Пример использования
-int main() {
-    // Кодировка консоли UTF-8
-    system("chcp 65001");
-
-    // Файл в кодировке UTF-8, поэтому ФИО ниже также создаются в UTF-8, значит сортировка будет работать.
-
-    char name1[] = "фадей";
-    char name2[] = "инесса";
-    char name3[] = "белла";
-    char name4[] = "ибрагим";
-    char name5[] = "степан";
-
-    char sname1[] = "трифонов";
-    char sname2[] = "филатова";
-    char sname3[] = "пестова";
-    char sname4[] = "богданов";
-    char sname5[] = "ё";
-
-    char pname1[] = "витальевич";
-    char pname2[] = "фомовна";
-    char pname3[] = "даниловна";
-    char pname4[] = "романович";
-    char pname5[] = "игнатович";
-
-    FullName fNames[] = {
-            {name1, sname1, pname1},
-            {name2, sname2, pname2},
-            {name3, sname3, pname3},
-            {name4, sname4, pname4},
-            {name5, sname5, pname5}
-    };
-
-    sortBySurname(fNames, 5);
-
-    for (int i = 0; i < 5; i++)
-        printf("%s %s %s\n", fNames[i].surname.name, fNames[i].name.name, fNames[i].patronymic.name);
 }
